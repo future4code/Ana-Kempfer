@@ -3,41 +3,151 @@
 
 <head>
     <title>Cocos e Morangos</title>
+   
+
+    <style>
+         body{
+           background-color: lavenderblush;
+           align-items: center;
+           margin:none;
+           padding: none;
+
+       }
+            .logo {
+            background-image: url("fundo.jpeg");
+            background-repeat: repeat-x; 
+            width: 100%;
+            font-family: Verdana; 
+            font-size: medium;
+            text-align: center;
+            font-size: 30px;
+            display: block;
+            padding: none;
+            
+        }
+        .desenho-bolo{
+            padding: 5px 0px 10px 0px 0px;
+            height: 200px;
+        
+        }
+        .buttons{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-items: center;
+            border: 2px;
+            border-color: black;
+            border-radius: 4%;
+            color: white;
+            padding: 15px 50px
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            
+        }
+        .saudacao{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            padding-top: 30px;
+            
+        }
+        .borda td {
+            border:1x #010202 solid;
+            padding: 0px;
+            
+            }
+           
+        .primeiro{
+            border-color: black;
+            border-width: 3px;
+            border-style: solid;
+            align-items: center;
+        }
+        .segundo{
+            border-color: black;
+            border-width: 3px;
+            border-style: solid;
+            align-items: center;
+        }
+        .terceiro{
+            border-color: black;
+            border-width: 3px;
+            border-style: solid;
+            align-items: center;
+        }
+        .quarto{
+            align-items: center;
+        }
+        #image1{
+            max-height: 100px;
+            max-width: 100px;
+        }
+        #image2{
+            max-height: 100px;
+            max-width: 100px;
+        }
+        #image3{
+            max-height: 100px;
+            max-width: 100px;
+        }
+        .infos{
+            background-color: lightpink;
+            font-size: medium;
+            text-align: right;
+            padding: 10px 5px 5px 0px;
+            max-width: 100%;
+            max-width: 100%;
+        }
+        
+            </style>
 </head>
 
 <body>
-    <h1><i>Produtos em estoque:</i></h1>
-    <link rel="styleheet" type="text/css" href="style.css">
+    <header class="logo">
+        <h1><em>Confeitaria Cocos e Morangos</em></h1>
+        <img src="bolo-preto-e-branco.png" class="desenho-bolo" alt="Desenho de torta" >
+    </header>
     <br>
+    <div class="buttons">
+        <a href="sistema-loja.html">HOME</a>
+        <a href=estoque.html>ESTOQUE</a>
+        <a href=adicionar-produtos.html>ADICIONAR PRODUTOS</a>
+        <a href=funcionarios.html>FUNCIONÁRIOS</a>
+    </div>
     <br>
-    <P>Escolha o seu produto e a quantidade desejada.</P>
+    <h2 class="saudacao"><u>Produtos em estoque:</u></h2>
     <br>
-    <table>
-        <tr>
+    <table class="borda" cellspacing="100" width="100">
+        <tr class="primeiro">
             <th>Imagem</th>
             <th>Descrição</th>
             <th>Preço</th>
             <th>Estoque</th>
         </tr>
-        <tr>
-            <td><img src="torta1.jpg" alt="Torta redonda com cobertura de brigadeiro"></td>
+        <tr class="segundo">
+            <td><img src="torta1.jpg" id="image1" alt="Torta redonda com cobertura de brigadeiro"></td>
             <td>Torta de chocolate recheada com creme e cobertura de brigadeiro.</td>
             <td>R$ 35,00</td>
             <td>5 unidades</td>
         </tr>
-        <tr>
-            <td><img src="torta2.jpg" alt="Torta redonda com dois niveis, coberta com morangos no topo e na lateral chocolate"></td>
+        <tr class="terceiro">
+            <td><img src="torta2.jpg" id="image3" alt="Torta redonda com dois niveis, coberta com morangos no topo e na lateral chocolate"></td>
             <td>Torta de chocolate recheada com nata e morangos.</td>
             <td>R$ 40,00</td>
             <td>3 unidades</td>
         </tr>
-        <tr>
-            <td><img src="torta3.jpeg" alt="Torta branca redonda com dois niveis com cobertura branca e rosas de glacê"></td>
+        <tr class="quarto">
+            <td><img src="torta3.jpeg" id="image3" alt="Torta branca redonda com dois niveis com cobertura branca e rosas de glacê"></td>
             <td>Torta Branca com recheio de doce-de-leite e cobertura de glacê real.</td>
             <td>R$ 25,00</td>
             <td>8 unidades</td>
         </tr>
     </table>
+        <br>
+    <footer class="infos">
+        <h4>Confeitaria Cocos e Morangos</h4>
+        <p>contato@cocosemorango.com.br<br>(54)33241909<br>Rua Travessa Ipiranga, 105, Bairro Vargas<br>Carazinho/RS<br>Brasil</p>
+    </footer>
 
 </body>
 

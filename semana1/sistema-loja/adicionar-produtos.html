@@ -3,22 +3,86 @@
 
 <head>
     <title>Cocos e Morangos</title>
-    <link rel="styleheet" type="text/css" href="style.css">
+   
+    <style>
+         body{
+           background-color: lavenderblush;
+           align-items: center;
+           margin:none;
+           padding: none;
+
+       }
+        
+            .logo {
+            background-image: url("fundo.jpeg");
+            background-repeat: repeat-x; 
+            width: 100%;
+            font-family: Verdana; 
+            font-size: medium;
+            text-align: center;
+            font-size: 30px;
+            display: block;
+            padding: none;
+            
+        }
+        .desenho-bolo{
+            padding: 5px 0px 10px 0px 0px;
+            height: 200px;
+        
+        }
+        .buttons{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-items: center;
+            border: 2px;
+            border-color: black;
+            border-radius: 4%;
+            color: white;
+            padding: 15px 50px
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            
+        }
+        
+        .saudacao{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: italic;
+            padding-top: 30px;
+            
+        }
+        
+        .infos{
+            background-color: lightpink;
+            font-size: medium;
+            text-align: right;
+            padding: 10px 5px 5px 0px;
+            max-width: 100%;
+            max-width: 100%;
+        }
+        
+            </style>
 </head>
 
 <body>
-    <h1><u>Adicionar produtos</u></h1>
-    <p>Adicione produtos utilizando nosso formulário:</p>
+    <header class="logo">
+        <h1><em>Confeitaria Cocos e Morangos</em></h1>
+        <img src="bolo-preto-e-branco.png" class="desenho-bolo" alt="Desenho de torta" >
+    </header>
+    <br>
+    <div class="buttons">
+        <a href="sistema-loja.html">HOME</a>
+        <a href=estoque.html>ESTOQUE</a>
+        <a href=adicionar-produtos.html>ADICIONAR PRODUTOS</a>
+        <a href=funcionarios.html>FUNCIONÁRIOS</a>
+    </div>
     <br>
     <br>
-
-    <form action=post>
-        <label for="name">Nome</label>
-        <input type="text" name="name" id="name">
-        <br>
-        <br>
-        <label for="email">E-mail</label>
-        <input type="text" name="email" id="email">
+    <h2><u>Adicionar produtos</u></h2>
+    <form action=post id="form">
+        <label for="image">Imagem</label>
+        <input type="text" name="image" id="image">
         <br>
         <br>
         <label for="description">Descrição</label>
@@ -34,6 +98,11 @@
 
 
     </form>
+    <br>
+    <footer class="infos">
+        <h4>Confeitaria Cocos e Morangos</h4>
+        <p>contato@cocosemorango.com.br<br>(54)33241909<br>Rua Travessa Ipiranga, 105, Bairro Vargas<br>Carazinho/RS<br>Brasil</p>
+    </footer>
 </body>
 
 </html>
