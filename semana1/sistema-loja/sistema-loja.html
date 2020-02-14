@@ -3,22 +3,107 @@
 
 <head>
     <title>Cocos e Morangos</title>
-</head>
+   
+   <style>
+       body{
+           background-color: lavenderblush;
+           align-items: center;
+           margin:none;
+           padding: none;
 
-<body>
-    <h1><em>Confeitaria Cocos e Morangos</em></h1>
-    <br>
-    <p>Seja bem vindo ao maravilhoso mundo dos <em>Cocos e Morangos!</em> </p>
-    <p>Aqui você encontra as mais saborosas e lindas tortas da cidade.</p>
-    <br>
-    <br>
-    <br>
-    <a href=estoque.html>ESTOQUE</a>
-    <br>
-    <a href=adicionar-produtos.html>ADICIONAR PRODUTOS</a>
-    <br>
-    <a href=funcionarios.html>FUNCIONÁRIOS</a>
-    <br>
-</body>
+       }
+        .logo {
+            background-image: url("fundo.jpeg");
+            background-repeat: repeat;
+            background-position: 100%;                     
+            font-family: Verdana; 
+            text-align: center;
+            font-size: 20px;
+            display: block;
+            padding: none;
+            margin: none;
+            max-width: 100%;   
+        }
+        .desenho-bolo{
+            padding: 5px 0px 0px 0px ;
+            height: 150px;
+            align-items: center;        
+        }
+             
+        .buttons{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            align-items: center;
+            border: 2px;
+            border-color: black;
+            border-radius: 4%;
+            color: white;
+            padding: 15px 50px
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            
+        }
+      
+        
+        .saudacao{
+            text-align: center;
+            font-family: fantasy;
+            padding: 0px;
+            font-size: 20px;
+        }
+        
+       #bolo-pequeno{
+        padding: 5px 0px 0px 0px ;
+        height: 300px;       
+        align-items: center; 
+        display:block
+       }  
+        .infos{
+            background-color: lightpink;
+            font-size: small;
+            text-align: right;
+            padding: none;
+            max-width: 100%;
+        }
+        
+            </style>
+</head>
+    <body>
+        <header class="logo">
+            <h1><em>Confeitaria Cocos e Morangos</em></h1>
+            <img src="bolo-preto-e-branco.png" class="desenho-bolo" alt="Desenho de torta" >
+        </header>
+            <br>
+            <div class="buttons">
+                <a href="sistema-loja.html">HOME</a>
+                <a href=estoque.html>ESTOQUE</a>
+                <a href=adicionar-produtos.html>ADICIONAR PRODUTOS</a>
+                <a href=funcionarios.html>FUNCIONÁRIOS</a>
+            </div>
+            <br>
+            <br>
+            <p class="saudacao">Seja bem vindo ao maravilhoso mundo dos <em>Cocos e Morangos!</em> </p>
+            <p class="saudacao">Aqui realizamos sonhos.</p>
+            <br>
+            <br>
+            <br>
+            <div>
+            <img src="bolo-pequeno.jpeg" id="bolo-pequeno" alt="Torta pequena coberta com chocolate e morangos">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+            <footer class="infos">
+                <h4>Confeitaria Cocos e Morangos</h4>
+                <p>contato@cocosemorango.com.br<br>(54)33241909<br>Rua Travessa Ipiranga, 105, Bairro Vargas<br>Carazinho/RS<br>Brasil</p>
+            </footer>
+    </body>
 
 </html>
