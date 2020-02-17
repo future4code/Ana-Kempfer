@@ -35,7 +35,8 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    width: 40px;
+    height: 40px;
 }
 
 .botao-amarelo {
@@ -125,8 +126,8 @@ table {
 
 }
 td{
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     padding: none;
     margin: none;
 }
@@ -145,15 +146,8 @@ td button:hover {
 
 .container-do-search {
     margin-top: 20px;
-    height: 100px;
-}
-
-.container-do-search img:hover {
-    opacity: 30%;
-}
-
-.container-do-search img:active {
-    opacity: 100%;
+    height: auto;
+    width: auto;
 }
 
 #back-button {
