@@ -1,0 +1,44 @@
+.tudo{
+    display: flex;
+}
+#header{
+    height: 30px;
+    width: 200px;
+    background-color: #2ecc40;
+
+}
+#menu{
+    height: 30px;
+    width: 200px;
+    background-color: #ffdc00;
+}
+#content1{
+    height: 30px;
+    width: 200px;
+    background-color: #f012be;
+}
+#Content2{
+    height: 30px;
+    width: 200px;
+    background-color: #0074d9;
+}
+#content3{
+    height: 30px;
+    width: 200px;
+    background-color: #eeeeee;
+}
+#image{
+    height: 30px;
+    width: 200px;
+    background-color:  #ff4136;
+}
+#extra{
+    height: 30px;
+    width: 200px;
+    background-color: #01ff70;
+}
+#footer{
+    height: 30px;
+    width: 200px;
+    background-color: #b10dc9;
+}
