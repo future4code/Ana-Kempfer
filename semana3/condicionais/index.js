@@ -65,7 +65,7 @@ a. Crie um programa que receba dois números do usuário através do `prompt` e 
 **decrescente**. O que acontece com o seu programa se os 2 números forem iguais? (é só testar e colocar
 comentário descrevendo o que aconteceu)
 
-RESPOSTA:*/
+RESPOSTA:
 
 const numero1 = Number(prompt("Digite o primeiro número."))
 const numero2 = Number(prompt("Digite o segundo número."))
@@ -81,11 +81,11 @@ if (numero1 > numero2){
 
 
 
-/*b. Adapte o programa para que o usuário digite 3 números. Ainda os imprima na ordem **decrescente**.
+b. Adapte o programa para que o usuário digite 3 números. Ainda os imprima na ordem **decrescente**.
 O que acontece como seu programa se os 3 números forem iguais? (é só testar e colocar um comentário 
 descrevendo o que aconteceu)
 
-RESPOSTA:*/
+RESPOSTA:
 const numero1 = Number(prompt("Digite o primeiro número."))
 const numero2 = Number(prompt("Digite o segundo número"))
 const numero3 = Number(prompt("Digite o terceiro número."))
@@ -108,10 +108,10 @@ if (numero1 > numero2 && numero1 > numero3 && numero2 > numero3){
 
 
 
-/*c. Agora, impeça que o usuário digite 3 números iguais. Caso todos sejam iguais, mostre um aviso ao
+c. Agora, impeça que o usuário digite 3 números iguais. Caso todos sejam iguais, mostre um aviso ao
  usuário indicando que ele deve, ao menos, inserir um número diferente.
 
-RESPOSTA:*/
+RESPOSTA:
 
 const numero1 = Number(prompt("Digite o primeiro número."))
 const numero2 = Number(prompt("Digite o segundo número"))
@@ -120,7 +120,7 @@ const numero3 = Number(prompt("Digite o terceiro número."))
 if(numero1 === numero2 && numero1 === numero3){
     console.log("Você deve digitar  ao menos número com valor diferente.")
 }
-
+*/
 
 //EXERCÍCIO 5
 
@@ -137,16 +137,166 @@ réptil. Ele será o primeiro (anfíbio), se passar uma parte da vida em ambient
 
 a. Escreva o diagrama esquemático que melhor represente a árvore condicional do exercício. (Coloque a imagem
 do esquema no drive e gerem um link de compartilhamento público. Coloque este link num comentário 
-durante a resolução deste exercício)*/
+durante a resolução deste exercício)
+
+//https://drive.google.com/open?id=1sOhLLz_fkrpmYGLxtBZRCFtg3uQn7-3u
 
 
 
-
-/*b. Escreva um programa que realize estas perguntas  e indique a classificação final considerada. As opções
+b. Escreva um programa que realize estas perguntas  e indique a classificação final considerada. As opções
  são: ser humano; mamífero não humano; ave; réptil; anfíbio; peixe ou é invertebrado.
- */
-
  
+RESPOSTA:
+
+ let ossos = prompt("O animal tem ossos? (s/n)")
+ 
+ if (ossos === "s"){
+     let pelos = prompt("O animal tem pelos? (s/n)")
+ } else if (pelos === "s"){
+     let racional = prompt("O animal é racional? (s/n)")
+ } else if (racional === "s"){
+     console.log("O animal é humano.")
+ } else if (racional === "n"){
+     console.log("O animal é um mamífero não humano.")
+ } else if (pelos === "n"){
+     let penas = prompt("O animal tem penas? (s/n)")
+ }else if (penas ==="s"){
+     console.log("O animal é uma ave.")
+ }else if (penas ==="n"){
+     let terrestre = prompt("O animal é terrestre? (s/n)")
+ }else if (terrestre === "n"){
+     console.log("O animal é um peixe.")
+ }else if (terrestre === "s"){
+     let vidaAquatica = prompt("O animal tem vida aquática?")
+ }else if (vidaAquatica === "s"){
+     console.log("O animal é um anfíbio. ")
+ }else if (vidaAquatica === "n"){
+     console.log("O animal é um réptil.")
+ }else (ossos === "n"){
+     console.log(prompt("O animal é invertebrado."))
+ }
+
+*/
 
 
 
+//DESAFIO
+
+
+
+
+let nomeCompleto = prompt("Digite o seu nome completo.")
+let tipoDeJogo = prompt("Qual é o tipo do jogo? \n DO = doméstico\n IN = internacional")
+let etapaDoJogo = prompt("Qual é a etapa do jogo? \n SF = semi-final \n DT = decisão de terceiro lugar\n FI = final")
+let categoria = prompt("Qual a categoria? (1,2,3 ou 4)")
+let quantidade = Number(prompt("Qual a quantidade de ingressos?"))
+let ingresso = 0
+
+
+
+
+if (tipoDeJogo === "IN"){
+
+    console.log("---Dados da Compra---")
+    console.log("Nome do Cliente: ", nomeCompleto)
+    console.log("Tipo do jogo: ", tipoDeJogo)
+    console.log("Etapa do jogo: ", etapaDoJogo)
+    console.log("Categoria: ", categoria)
+    console.log("Quantidade de ingressos: ", quantidade)
+    console.log("---Valores---")
+
+        
+    switch (ingresso){
+        case("SF"&&"1"):
+        console.log("Valor do ingresso: $", 1.320)
+        break;
+        case("SF"&&"2"):
+        console.log("Valor do ingresso: $", 880)
+        console.log("Valor total: $", quantidade *880)
+        break;
+        case("SF"&&"3"):
+        console.log("Valor do ingresso: $", 550)
+        console.log("Valor total: $", quantidade *550)
+        break;
+        case("SF"&&"4"):
+        console.log("Valor do ingresso: $", 220)
+        console.log("Valor total: $", quantidade *220)
+        break;
+    }
+}
+
+    /*if (tipoDeJogo === "DO" && etapaDoJogo === "SF" && categoria === "1"){
+    console.log( "Valor do ingresso: R$" quantidade * 1.320)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "2"){
+    console.log( "Valor do ingresso: R$", quantidade * 880)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "3"){
+    console.log( "Valor do ingresso: R$", quantidade * 550)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "4"){
+    console.log( "Valor do ingresso: R$", quantidade * 220)
+}
+
+if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "1"){
+    console.log( "Valor do ingresso: R$", quantidade * 660)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "2"){
+    console.log( "Valor do ingresso: R$", quantidade * 440)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "3"){
+    console.log( "Valor do ingresso: R$", quantidade * 330)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "4"){
+    console.log( "Valor do ingresso: R$", quantidade * 170)
+}
+
+if (tipoDeJogo === "DO" && etapaDoJogo === "FI" && categoria === "1"){
+    console.log( "Valor do ingresso: R$", quantidade * 1.9)80
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "2"){
+    console.log( "Valor do ingresso: R$", quantidade * 1.3)20
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "3"){
+    console.log( "Valor do ingresso: R$", quantidade * 880)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "4"){
+    console.log( "Valor do ingresso: R$", quantidade * 330)
+}
+*/
+
+/*if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoria === "1"){
+    console.log( "Valor do ingresso: $", quantidade * 1.320)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "2"){
+    console.log( "Valor do ingresso: $", quantidade * 880)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "3"){
+    console.log( "Valor do ingresso: $", quantidade * 550)
+}else if (tipoDeJogo ==="DO" && etapaDoJogo === "SF" && categoria === "4"){
+    console.log( "Valor do ingresso: $", quantidade * 220)
+}
+
+if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoria === "1"){
+    console.log( "Valor do ingresso: $", quantidade * 660)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "2"){
+    console.log( "Valor do ingresso: $", quantidade * 440)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "3"){
+    console.log( "Valor do ingresso: $", quantidade * 330)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "4"){
+    console.log( "Valor do ingresso: $", quantidade * 170)
+}
+
+if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoria === "1"){
+    console.log( "Valor do ingresso: $", quantidade * 1.980)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "2"){
+    console.log( "Valor do ingresso: $", quantidade * 1.320)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "3"){
+    console.log( "Valor do ingresso: $", quantidade * 880)
+}else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoria === "4"){
+    console.log( "Valor do ingresso: $", quantidade * 330)
+}
+
+
+
+} else {
+    console.log("---Dados da Compra---")
+    console.log("Nome do Cliente: ", nomeCompleto)
+    console.log("Tipo do jogo: ", tipoDeJogo)
+    console.log("Etapa do jogo: ", etapaDoJogo)
+    console.log("Categoria: ", categoria)
+    console.log("Quantidade de ingressos: ", quantidade)
+    console.log("---Valores---")
+    console.log("Valor do ingresso: ", valorIngresso)
+    console.log("Valor total: R$", valorIngresso)
+}
+*/
