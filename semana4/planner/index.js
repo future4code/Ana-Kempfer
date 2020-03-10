@@ -57,6 +57,7 @@ function criarNovaTarefa(){
                 input.value = "";
                 break;
             }
+            
         }
     }
 }
