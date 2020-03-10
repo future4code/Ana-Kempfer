@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Planner</title>
+  </head>
+  <body>
+    
+    <div id="conteiner">
+      <input type="text"  id="input" placeholder="Nova tarefa">
+      <select id="select">
+        <option >Segunda-feira</option>
+        <option >Terça-feira</option>
+        <option >Quarta-feira</option>
+        <option >Quinta-feira</option>
+        <option >Sexta-feira</option>
+        <option >Sábado</option>
+        <option >Domingo</option>
+      </select>
+      <button onclick="criarNovaTarefa()">Criar nova tarefa</button>
+    </div>
+
+
+    <main>
+      
+      <div id="segunda">
+        <h3>Segunda</h3>
+        <ul class="conteiner" id="1"></ul>
+      </div>
+      <div id="terca">
+        <h3>Terça</h3>
+        <ul class="conteiner" id="2"></ul>
+      </div>
+      <div id="quarta">
+        <h3>Quarta</h3>
+        <ul class="conteiner" id="3"></ul>
+      </div>
+      <div id="quinta">
+        <h3>Quinta</h3>
+        <ul class="conteiner" id="4"></ul>
+      </div>
+      <div id="sexta">
+        <h3>Sexta</h3>
+        <ul class="conteiner" id="5"></ul>
+      </div>
+      <div id="sabado">
+        <h3>Sábado</h3>
+        <ul class="conteiner" id="6"></ul>
+      </div>
+      <div id="domingo">
+        <h3>Domingo</h3>
+        <ul class="conteiner" id="7"></ul>
+      </div>
+
+
+    </main>
+  </body>
+</html>
