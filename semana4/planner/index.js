@@ -1,12 +1,13 @@
 
 function criarNovaTarefa(){
     
-    const input = document.querySelector("input")
-    const novoItemDaLista = input.value
-    const semana = document.querySelector("#diaDaSemana")
-    const diaDaSemana = semana.value
+    const input = document.getElementById("input");
+    const novoItemDaLista = input.value;
+
+    const semana = document.getElementById("select");
+    const diaDaSemana = semana.value;
    
-    if(novoItemDaLista === "" || novoItemDaLista === null){
+    if(novoItemDaLista === ""){
 
         alert ("Insira uma nova tarefa.")
 
@@ -14,41 +15,48 @@ function criarNovaTarefa(){
 
         switch (diaDaSemana){
             case "Segunda-feira":{
-                const listaTarefas = document.getElementById("segunda")
+                const listaTarefas = document.getElementById("segunda");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
+                input.value = "";
+                break;
             }
-            break;
+            
             case "Terça-feira":{
-                const listaTarefas = document.getElementById("2")
+                const listaTarefas = document.getElementById("terca");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
             case "Quarta-feira":{
-                const listaTarefas = document.getElementById("3")
+                const listaTarefas = document.getElementById("quarta");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
             case "Quinta-feira":{
-                const listaTarefas = document.getElementById("4")
+                const listaTarefas = document.getElementById("quinta");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
             case "Sexta-feira":{
-                const listaTarefas = document.getElementById("5")
+                const listaTarefas = document.getElementById("sexta");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
             case "Sábado":{
-                const listaTarefas = document.getElementById("6")
+                const listaTarefas = document.getElementById("sabado");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
             case "Domingo":{
-                const listaTarefas = document.getElementById("7")
+                const listaTarefas = document.getElementById("domingo");
                 listaTarefas.innerHTML += "<li>" + novoItemDaLista + "</li>"
-                input.value = ""
-            }break;
+                input.value = "";
+                break;
+            }
         }
     }
 }
@@ -60,96 +68,3 @@ function criarNovaTarefa(){
     //         novoItem.innerHTML += "<li>" + novoItemDaLista + "</li>"
     //         input.value = ""
     // }
-
-
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("terca")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("terca")
-//             novoItem.innerHTML += "<li>" + novoItemDaLista + "</li>"
-//             input.value = ""
-//         }        
-    
-// }
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("quarta")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("quarta")
-//             novoItem.innerHTML += "<li>" + novoItemDaLista + "</li"
-//             input.value = ""
-//     }
-// }
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("quinta")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("quinta")
-//             novoItem.innerHTML += "<li id='4'>" + novoItemDaLista + "</li"
-//             input.value = ""
-//     }
-// }
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("sexta")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("sexta")
-//             novoItem.innerHTML += "<li id='5'>" + novoItemDaLista + "</li"
-//             input.value = ""
-//     }
-// }
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("sabado")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("sabado")
-//             novoItem.innerHTML += "<li id='6'>" + novoItemDaLista + "</li"
-//             input.value = ""
-//     }
-// }
-
-// function criarNovaTarefa(){
-    
-//     const dias = document.getElementById("domingo")
-//     const input = document.querySelector("input")
-//     const novoItemDaLista = input.value
-    
-//     if(novaTarefa === ""){
-//             alert("Insira uma nova tarefa.")
-//         }else{
-//             const novoItem = document.getElementById("domingo")
-//             novoItem.innerHTML += "<li id=''>" + novoItemDaLista + "</li"
-//             input.value = ""
-//     }
-// }
