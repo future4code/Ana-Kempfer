@@ -8,15 +8,23 @@ body{
     background: url(recursos/bright-yellow-brick.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    
 }
-h1{
-    font: 50px italic;
-    font-family: sans-serif;
-    align-items: center;
-}
+
 #conteiner{
     align-items: center;
     top: 30px;
+    padding: 20px 100px 0px 450px;
+}
+button{
+    padding: 5px;
+    
+}
+input{
+    padding: 5px;
+}
+select{
+    padding: 5px;
 }
 
 main{
@@ -30,6 +38,7 @@ main{
 }
 main>div{
     border: 1px solid gray;
+    border-radius: 2%;
 }
 
 
@@ -38,24 +47,28 @@ main>div{
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 }
 #terca{
     height: 90%;
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 }    
 #quarta{
-    height: 90%;
+    height: 90%; 
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 }
 #quinta{
     height: 90%;
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 
 }
 #sexta{
@@ -63,12 +76,14 @@ main>div{
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 }
 #sabado{
     height: 90%;
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 
 }
 #domingo{
@@ -76,5 +91,6 @@ main>div{
     width: 200px;
     background-color: palegoldenrod;
     padding: 10px;
+    margin: 5px;
 }
 
