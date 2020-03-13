@@ -148,18 +148,36 @@ console.log("A diferença entre eles é ", diferenca)
 
 EXERCICIOS DE FUNÇÕES 
 
-1.  RESPOSTA: Escreva uma função que receba um array de números e
- imprima na tela o segundo maior e o segundo menor número. 
- Em seguida, invoque essa função.
+1.  RESPOSTA: 
+
+let numeros = [9, 5, 3, 8, 10]
+let segundoMaior = 0
+let segundoMenor = 0 
+
+
+array.sort(function(a, b) {
+    return a - b
+};
+    segundoMenor = array[(array.length - 2)]
+    console.log("O Segundo menor número é: ", segundoMenor)
+
+    segundoMaior = array[1]
+    console.log("O segundo maior número é: ", segundoMaior)
 
 
 
- 
 
 
+2. RESPOSTA: 
+let alert = (enviarMensagem === true) => {
+   return alert("Hello Future4")
+}
 
-
+let enviarMensagem = alert
 
 
 */
+
+
+
 
