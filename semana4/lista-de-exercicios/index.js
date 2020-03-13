@@ -40,3 +40,126 @@ No console vai ser impresso: [25,12,55,64,121,44,11,84,51,48,14,73,111,283,1,99
 13,31,83,131,1,1.1,-10,25,1590]
 [25,12,55,64,121,44,11,84,51,48,14,73,111,283,1,99,13,31,83,131,1,1.1,25,1590]
 */
+
+
+
+
+//EXERCICIO DE LÓGICA DE PROGRAMAÇÃO
+
+/*
+1. Cite 3 maneiras de se percorrer/iterar uma lista. Faça um programa
+ para exemplificar.
+RESPOSTA:   Estrutura "for of" = for(let array of array1){}
+Estrutura "for" = (var i = 0; i < array.length; i++){}
+Estrutura "forEach" =  while(i <= array){}
+
+
+
+2. RESPOSTA: 
+a) False
+b) False
+c) True
+d) True
+e) True
+
+
+
+3. Você tem que escrever um código que, dado um número N, ele imprima
+(no console) os N primeiros números pares (por exemplo, se N for 3,
+você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4,
+6 e 8).  Um colega seu disse que já começou esta tarefa, mas 
+não conseguiu terminar. Dê uma olhada no código dele:
+
+RESPOSTA: 
+const quantidadeDeNumerosPares()
+let i = 0
+let resultado = 0
+for(let i of quantidadeDeNumerosPares()){
+    for(i=0; i<quantidadeDeNumerosPares.length; i++){
+        if(i % 2 === 0){
+            i.push(resultado)
+        }
+    }
+    return resultado;
+}
+
+console.log(reultado)
+
+
+4. 
+
+RESPOSTA: 
+
+let ladoA = 0
+let ladoB = 0
+let ladoC = 0
+
+function determinarTriangulo(ladoA,ladoB,ladoC){
+    if(ladoA === ladoB && ladoA === ladoC){
+        console.log("É um triângulo Equilátero")
+    }else if (ladoA !== ladoB && ladoA === ladoC){
+        console.log("É um triângulo Isóceles")
+    }else if (ladoA !== ladoB && ladoA !== ladoC){
+        console.log("É um triângulo Escaleno")
+    }
+}
+
+const resultado = determinarTriangulo()
+
+
+
+
+
+5. RESPOSTA: 
+const primeiroNumero = number(prompt("Digite o primeiro número"))
+const segundoNumero = number(prompt("Digite o segundo número"))
+let numeroMaior = 0
+let divisivel = ""
+let diferenca = 0 
+
+console.log("ENTRADA: ", primeiroNumero, "e" , segundoNumero)
+
+function avaliacaoDeDoisNumeros(){
+    if(primeiroNumero > segundoNumero){
+        numeroMaior.push(primeiroNumero)
+    }else{
+        numeroMaior.push(segundoNumero)
+    }
+
+    if(primeiroNumero%segundoNumero === 0){
+        divisivel = "é divisível por"
+    }else{
+       divisivel = "não divisível por"
+    }
+
+    if(primeiroNumero%segundoNumero === 2){
+        diferenca = primeiroNumero%segundoNumero 
+    }
+}
+
+let resultado = avaliacaoDeDoisNumeros(primeiroNumero,segundoNumero)
+
+console.log("SAÌDA:")
+console.log("O maior númeor é: ", numeroMaior)
+console.log(primeiroNumero, divisível, segundoNumero)
+console.log("A diferença entre eles é ", diferenca)
+
+
+
+EXERCICIOS DE FUNÇÕES 
+
+1.  RESPOSTA: Escreva uma função que receba um array de números e
+ imprima na tela o segundo maior e o segundo menor número. 
+ Em seguida, invoque essa função.
+
+
+
+ 
+
+
+
+
+
+
+*/
+
