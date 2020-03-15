@@ -39,14 +39,14 @@ A segunda condição é de que se numero for maior que o valor de array numero2
 No console vai ser impresso: [25,12,55,64,121,44,11,84,51,48,14,73,111,283,1,99
 13,31,83,131,1,1.1,-10,25,1590]
 [25,12,55,64,121,44,11,84,51,48,14,73,111,283,1,99,13,31,83,131,1,1.1,25,1590]
-*/
 
 
 
+/////////////////////////////////////////////////////////////////////////////////
 
-//EXERCICIO DE LÓGICA DE PROGRAMAÇÃO
+EXERCICIO DE LÓGICA DE PROGRAMAÇÃO
 
-/*
+
 1. Cite 3 maneiras de se percorrer/iterar uma lista. Faça um programa
  para exemplificar.
 RESPOSTA:   Estrutura "for of" = for(let array of array1){}
@@ -146,6 +146,9 @@ console.log("A diferença entre eles é ", diferenca)
 
 
 
+
+////////////////////////////////////////////////////////////////////////////
+
 EXERCICIOS DE FUNÇÕES 
 
 1.  RESPOSTA: 
@@ -176,8 +179,99 @@ let alert = (enviarMensagem === true) => {
 let enviarMensagem = alert
 
 
+
+///////////////////////////////////////////////////////////////////////////////
+
+EXERCÍCIOS DE OBJETOS
+
+1. RESPOSTA: 
+Os Arrys são um tipo de estrutura que representa representa um bloco de dados 
+que podem ser números, string, objetos, bolleanos, armazenados em um única variável.
+São organizados de modo consecutivo. Devem ser usados quando queremos que o nome dos 
+objetos armazenados sejam números. 
+Os objetos são uma expécie de "super variável" que apresenta valores que recebem um nome
+e que podem ser recuperados e usados em outras partes do código.devem ser usados
+quando quisermos que os nomes dos elementos sejam strings.
+
+
+
+2.Crie uma função chamada criaRetangulo que recebe como parâmetros dois lados 
+(lado1 e lado2) e retorna um objeto com 4 informações: largura (lado1), altura 
+(lado2), perímetro (2 * (lado1 + lado2)) e área (lado1 * lado2).
+
+RESPOSTA:
+
 */
 
+
+function criaRetangulo(){
+
+    let lado1 = Number(prompt("Digite a altura do retângulo"));
+    let lado2 = Number(prompt("Digite a lartura do retângulo"));
+
+   
+    let informacoesDoRetangulo = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: (2*(lado1 + lado2)),
+        area: (lado1 * lado2),
+    };
+}
+
+const retangulo = criaRetangulo();
+
+console.log(informacoesDoRetangulo);
+
+
+
+/*
+
+
+
+
+
+
+3.RESPOSTA: 
+
+const filme = {
+    nome: "Pulp Fiction",
+    diretor: "Quentin Tarantino",
+    ano: 1995,
+    ator1: "John Travolta",
+    ator2: "Uma Thurman",
+};
+
+const mensagem = ["Venhe assistir ao filme ", filme.nome,"de ", filme.ano,"dirigido por ", filme.diretor, "e estrelado por ", filme.ator1, "e ", filme.ator2]
+
+alert(mensagem);
+
+
+
+
+4. RESPOSTA: 
+
+const pessoa = {
+    nome: "Rafaela Prestes",
+    idade: 10,
+    email: "rafaelaprestes@gmail.com",
+    endereço: "Ibirubá - RS",
+}
+
+function anonimizarPessoa() {
+    const anonimo = {
+    ...pessoa,
+    nome: "ANÔNIMO",
+    }
+
+    console.log(anonimo)
+}
+
+console.log(anonimizarPessoa())
+
+
+
+
+*/
 
 
 
