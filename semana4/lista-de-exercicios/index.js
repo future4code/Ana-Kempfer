@@ -62,15 +62,9 @@ c) True
 d) True
 e) True
 
+*/
 
-
-3. Você tem que escrever um código que, dado um número N, ele imprima
-(no console) os N primeiros números pares (por exemplo, se N for 3,
-você deve imprimir 0, 2 e 4; se N for 5, deve imprimir 0, 2, 4,
-6 e 8).  Um colega seu disse que já começou esta tarefa, mas 
-não conseguiu terminar. Dê uma olhada no código dele:
-
-RESPOSTA: 
+//3. RESPOSTA: 
 const quantidadeDeNumerosPares()
 let i = 0
 let resultado = 0
@@ -86,9 +80,7 @@ for(let i of quantidadeDeNumerosPares()){
 console.log(reultado)
 
 
-4. 
-
-RESPOSTA: 
+//4. RESPOSTA: 
 
 let ladoA = 0
 let ladoB = 0
@@ -110,7 +102,7 @@ const resultado = determinarTriangulo()
 
 
 
-5. RESPOSTA: 
+//5. RESPOSTA: 
 const primeiroNumero = number(prompt("Digite o primeiro número"))
 const segundoNumero = number(prompt("Digite o segundo número"))
 let numeroMaior = 0
@@ -149,9 +141,9 @@ console.log("A diferença entre eles é ", diferenca)
 
 ////////////////////////////////////////////////////////////////////////////
 
-EXERCICIOS DE FUNÇÕES 
+//EXERCICIOS DE FUNÇÕES 
 
-1.  RESPOSTA: 
+//1.  RESPOSTA: 
 
 let numeros = [9, 5, 3, 8, 10]
 let segundoMaior = 0
@@ -171,7 +163,7 @@ array.sort(function(a, b) {
 
 
 
-2. RESPOSTA: 
+//2. RESPOSTA: 
 let alert = (enviarMensagem === true) => {
    return alert("Hello Future4")
 }
@@ -182,7 +174,7 @@ let enviarMensagem = alert
 
 ///////////////////////////////////////////////////////////////////////////////
 
-EXERCÍCIOS DE OBJETOS
+//EXERCÍCIOS DE OBJETOS
 
 1. RESPOSTA: 
 Os Arrys são um tipo de estrutura que representa representa um bloco de dados 
@@ -195,44 +187,25 @@ quando quisermos que os nomes dos elementos sejam strings.
 
 
 
-2.Crie uma função chamada criaRetangulo que recebe como parâmetros dois lados 
-(lado1 e lado2) e retorna um objeto com 4 informações: largura (lado1), altura 
-(lado2), perímetro (2 * (lado1 + lado2)) e área (lado1 * lado2).
-
-RESPOSTA:
-
-*/
-
-
-function criaRetangulo(){
-
-    let lado1 = Number(prompt("Digite a altura do retângulo"));
-    let lado2 = Number(prompt("Digite a lartura do retângulo"));
-
-   
+//2.RESPOSTA:
+function criaRetangulo(lado1,lado2){
+       
     let informacoesDoRetangulo = {
         largura: lado1,
         altura: lado2,
         perimetro: (2*(lado1 + lado2)),
         area: (lado1 * lado2),
     };
+    console.log(informacoesDoRetangulo);
 }
 
-const retangulo = criaRetangulo();
-
-console.log(informacoesDoRetangulo);
-
-
-
-/*
+const retangulo = criaRetangulo(Number(prompt("Digite a altura do retângulo")),Number(prompt("Digite a lartura do retângulo")));
 
 
 
 
 
-
-3.RESPOSTA: 
-
+//3.RESPOSTA: 
 const filme = {
     nome: "Pulp Fiction",
     diretor: "Quentin Tarantino",
@@ -241,15 +214,14 @@ const filme = {
     ator2: "Uma Thurman",
 };
 
-const mensagem = ["Venhe assistir ao filme ", filme.nome,"de ", filme.ano,"dirigido por ", filme.diretor, "e estrelado por ", filme.ator1, "e ", filme.ator2]
+const mensagem = ["Venhe assistir ao filme "+ filme.nome + " de "+ filme.ano+" dirigido por "+ filme.diretor+ " e estrelado por "+ filme.ator1+ " e "+ filme.ator2]
 
 alert(mensagem);
 
 
 
 
-4. RESPOSTA: 
-
+//4. RESPOSTA: 
 const pessoa = {
     nome: "Rafaela Prestes",
     idade: 10,
@@ -271,7 +243,131 @@ console.log(anonimizarPessoa())
 
 
 
-*/
+//////////////////////////////////////////////////////////////////////
+
+//EXERCÍCOOS DE FUNÇÕES DE ARRAY
+
+//1. a e b RESPOSTA:
+const pessoas = [
+    {nome: "Pedro", idade: 20},
+    {nome: "João", idade: 10},
+    {nome: "Paula", idade: 12},
+    {nome: "Artur", idade: 89},
+]
+
+let adultos = pessoas.filter((pessoas,index,array)=>{
+    return pessoas.idade >= 20
+})
+
+let criancaAdolescente = pessoas.filter((pessoas,index,array)=>{
+    return pessoas.idade <= 20
+})
+
+console.log(adultos);
+console.log(criancaAdolescente);
 
 
 
+//2. RESPOSTA: 
+
+//A
+const numeros = [1,2,3,4,5,6];
+
+let numerosMultiplicadosPorDois = numeros.map((numeros,index,array)=>{
+    return numeros*2;
+})
+
+console.log(numerosMultiplicadosPorDois);
+
+
+//B
+
+let numerosMultiplicadosPorTres = numeros.map((numeros,index,array)=>{
+    return numeros*3;
+})
+
+console.log(numerosMultiplicadosPorTres);
+
+
+//C
+let verificaParidade = numeros.map((numeros,index,array)=>{
+    if(numeros%2 ===0){
+        
+        console.log(numeros+ " é par");
+    }else{
+        
+        console.log(numeros+ " é impar")
+    }
+})
+
+
+//3. RESPOSTA: 
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+//A
+let quemPodeEntrarNoBrinquedo = pessoas.filter((pessoas,index,array)=>{
+    return (pessoas.idade >14 && pessoas.idade <= 60)&& pessoas.altura >= 1.5
+})
+
+console.log(quemPodeEntrarNoBrinquedo);
+
+
+//B
+let quemNãoPodeEntrarNoBrinquedo = pessoas.filter((pessoas,index,array)=>{
+    return (pessoas.idade > 60 && pessoas.altura <= 1.5) && pessoas.idade <= 14
+})
+
+console.log(quemNãoPodeEntrarNoBrinquedo);
+
+
+
+
+//4. RESPOSTA (não consegui fazer o envio do email, somente o reconhecimento dos dois grupos)
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+let consultasNaoCanceladas = consultas.filter((consultas,index,array)=>{
+    return consultas.cancelada === false
+})
+
+console.log(consultasNaoCanceladas)
+
+let consultasCanceladas = consultas.filter((consultas,index,array)=>{
+    return consultas.cancelada === true
+})
+
+console.log(consultasCanceladas)
+
+
+
+
+
+//5. RESPOSTA: 
+const contas = [
+	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+]
+
+
+let saldoAtualizado = contas.forEach((contas,index,array)=>{
+    let novoSaldo = contas.saldoTotal - contas.compras
+    return novoSaldo
+})
+
+console.log(saldoAtualizado)
