@@ -6,8 +6,8 @@ function CardGrande(props){
     return(
         <div className="card-grande">
             <img src={props.imagem}/>
-            <h3>{props.textonegrito}</h3>
-            <p>{props.textoUmaLinha}</p>
+            <h3>{props.titulo}</h3>
+            <p>{props.descricao}</p>
         </div>
     );
 }
