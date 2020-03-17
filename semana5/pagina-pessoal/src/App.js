@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import TituloSeco from './components/TituloSeco';
-import CardGrande from './components/CardGrande';
-import CardPequeno from './components/CardPequeno';
-import BotaoComImagem from './components/BotaoComImagem';
+import TituloSeco from './components/TituloSeco/TituloSeco';
+import CardGrande from './components/CardGrande/CardGrande';
+import CardPequeno from './components/CardPequeno/CardPequeno';
+import BotaoComImagem from './components/BotaoComImagem/BotaoComImagem';
 
 function App() {
   return (
