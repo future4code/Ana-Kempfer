@@ -5,9 +5,13 @@ import './CardGrande.css'
 function CardGrande(props){
     return(
         <div className="card-grande">
-            <img src={props.imagem}/>
-            <h3>{props.titulo}</h3>
-            <p>{props.descricao}</p>
+            <div className="container-da-imagem">
+                <img src={props.imagem}/>
+            </div>
+            <div className="container-do-texto">
+                <h3>{props.titulo}</h3>
+                <p>{props.descricao}</p>
+            </div>
         </div>
     );
 }

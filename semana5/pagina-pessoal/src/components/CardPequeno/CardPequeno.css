@@ -1,3 +1,12 @@
 .card-pequeno{
-    margin: 1px solid black;
+    border: 1px solid black;
+    margin: 30px;
+    height: 30px;
+    width: 300px;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    align-items: center;
+}
+.card-pequeno img{
+    padding: 10px;
 }

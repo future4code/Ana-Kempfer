@@ -1,3 +1,14 @@
 .card-grande{
-    margin: 1px solid black;
+    border: 1px solid black;
+    margin: 30px;
+    height: 180px;
+    width: 400px;
+    display: flex;
+    padding: 10px;
+}
+.card-grande img{
+    padding: 10px 10px 0px 0px;
+}
+.container-do-texto{
+    padding: 0px 10px 0px 0px;
 }

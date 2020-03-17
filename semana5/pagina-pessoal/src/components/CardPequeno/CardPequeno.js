@@ -5,7 +5,7 @@ function CardPequeno(props){
     return(
         <div className="card-pequeno">
             <img src="{props.imagem}"/>
-            <label><strong>{props.textoEmNegrito}</strong></label>
+            <h4>{props.textoEmNegrito}</h4>
         </div>
     );
 
