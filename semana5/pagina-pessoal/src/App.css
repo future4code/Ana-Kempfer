@@ -1,3 +1,6 @@
-.container-identificacao{
-    height: 180px;
+.App{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

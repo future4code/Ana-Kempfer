@@ -1,10 +1,8 @@
 .titulo-seco{
-    
-    margin: 30px;
+    margin: 10px;
     height: 40px;
     width: 300px;
-    padding: 0px 0px 0px 40px ;
-    display:flex;
+    display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }

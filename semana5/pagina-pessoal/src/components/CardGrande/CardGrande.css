@@ -1,14 +1,16 @@
 .card-grande{
     border: 1px solid black;
-    margin: 30px;
+    margin: 10px;
     height: 180px;
     width: 400px;
     display: flex;
     padding: 10px;
 }
-.card-grande img{
-    padding: 10px 10px 0px 0px;
+.container-da-imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .container-do-texto{
-    padding: 0px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
 }
