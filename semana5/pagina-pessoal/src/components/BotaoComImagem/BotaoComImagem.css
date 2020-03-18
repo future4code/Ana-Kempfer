@@ -1,0 +1,16 @@
+.botao-com-imagem{
+    width: 150px;
+    height: 20px;
+    padding: 10px 5px 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 200px;
+}
+.botao-com-imagem img{
+    width: 30px;
+    height: 30px;
+    padding: 10px 10px 10px 10px;
+}

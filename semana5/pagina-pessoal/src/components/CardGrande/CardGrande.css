@@ -1,0 +1,24 @@
+.card-grande{
+    border: 1px solid black;
+    margin: 10px;
+    height: 180px;
+    width: 400px;
+    display: flex;
+    padding: 10px;
+}
+.card-grande img{
+    height: 60px;
+    width: 60px;
+}
+.container-da-imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-do-texto{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
