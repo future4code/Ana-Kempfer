@@ -6,11 +6,19 @@
     display: flex;
     padding: 10px;
 }
+.card-grande img{
+    height: 60px;
+    width: 60px;
+}
 .container-da-imagem{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .container-do-texto{
-    padding: 10px 0px 10px 10px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
 }
