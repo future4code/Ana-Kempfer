@@ -14,13 +14,17 @@ class Post extends React.Component {
 
     this.state = {
       curtido: false,
-      numeroCurtidas: 1,
+      numeroCurtidas: 0,
       comentando: false,
-      numeroComentarios: 2,
+      numeroComentarios: 0,
     }
   }
 
   onClickCurtida = () => {
+    this.setState({
+      curtido: true,
+      numeroCurtidas: this.state.numeroCurtidas + 1
+    })
     console.log('Curtiu!')
   }
 
