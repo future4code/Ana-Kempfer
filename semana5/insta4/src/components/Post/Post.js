@@ -68,10 +68,10 @@ class Post extends React.Component {
 
     const postGeral = this.state.post.map(post =>{
       return (
-        IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
+        <IconeComContador
+          icone={iconeComentario}
+          onClickIcone={this.onClickComentario}
+          valorContador={this.state.numeroComentarios}
         />
       )
     });
