@@ -7,7 +7,7 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import iconeMarcacaoBranco from '../../img/small-bookmark.svg'
 import iconeMarcacaoPreto from '../../img/bookmark-black-shape.svg'
-import {IconeMarcacao} from '../IconeMarcacao/IconeMarcacao'
+// import {IconeMarcacao} from '../IconeMarcacao/IconeMarcacao'
 
 class Post extends React.Component {
   constructor(props) {
@@ -16,9 +16,10 @@ class Post extends React.Component {
     this.state = {
       curtido: false,
       numeroCurtidas: 0,
-      marcado: false,
       comentando: false,
       numeroComentarios: 0,
+      marcado: false,
+      numeroMarcacao: 0,
     }
   }
 
@@ -32,8 +33,9 @@ class Post extends React.Component {
 
   onClickMarcacao = () => {
     this.setState({
-      marcado: !this.state.marcado
-    })
+      marcado: true,
+      numeroMarcacao: this.state.numeroMarcacao + 1
+    }) 
   }
 
   onClickComentario = () => {
@@ -93,9 +95,10 @@ class Post extends React.Component {
           valorContador={this.state.numeroComentarios}
         />
 
-      <IconeMarcacao 
+        <IconeComContador
           icone={iconeMarcacao}
-          onclick={this.onClickMarcacao}
+          onclickIcone={this.onClickMarcacao}
+          valorContador={this.state.numeroMarcacao}
         />
       </div>
       {componenteComentario}
