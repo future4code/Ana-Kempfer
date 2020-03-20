@@ -14,31 +14,18 @@ class Post extends React.Component {
     super(props)
 
     this.state = {
-      post: [
-        {
-          foto: "",
-          nome: "",
-          curtida: false,
-          numeroCurtidas: 0,
-          comentando:false,
-          numeroComentarios: 0,
-          marcacao: false,
-
-        }
-      ]
-
-      // curtido: false,
-      // numeroCurtidas: 0,
-      // comentando: false,
-      // numeroComentarios: 0,
-      // marcado: false,
-      // numeroMarcacao: 0,
-    };
+      curtido: false,
+      numeroCurtidas: 0,
+      comentando: false,
+      numeroComentarios: 0,
+      marcado: false,
+      numeroMarcacao: 0,
+    }
   }
 
   onClickCurtida = () => {
     this.setState({
-      curtida: true,
+      curtido: true,
       numeroCurtidas: this.state.numeroCurtidas + 1
     })
     console.log('Curtiu!')
@@ -65,37 +52,26 @@ class Post extends React.Component {
   }
 
   render() {
+    let iconeCurtida
 
-    const postGeral = this.state.post.map(post =>{
-      return (
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      )
-    });
+    if(this.state.curtido) {
+      iconeCurtida = iconeCoracaoPreto
+    } else {
+      iconeCurtida = iconeCoracaoBranco
+    }
 
-    // let iconeCurtida
+    let iconeMarcacao 
 
-    // if(this.state.curtido) {
-    //   iconeCurtida = iconeCoracaoPreto
-    // } else {
-    //   iconeCurtida = iconeCoracaoBranco
-    // }
+    if(this.state.marcado){
+      iconeMarcacao = iconeMarcacaoPreto
+    }else{
+      iconeMarcacao = iconeMarcacaoBranco
+    }
 
-    // let iconeMarcacao 
+    let componenteComentario
 
-    // if(this.state.marcado){
-    //   iconeMarcacao = iconeMarcacaoPreto
-    // }else{
-    //   iconeMarcacao = iconeMarcacaoBranco
-    // }
-
-    // let componenteComentario
-
-    // if(this.state.comentando) {
-    //   componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    if(this.state.comentando) {
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
 
     return <div className={'post-container'}>

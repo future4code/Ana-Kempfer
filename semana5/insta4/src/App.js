@@ -3,27 +3,51 @@ import './App.css';
 import Post from './components/Post/Post';
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className={'app-container'}>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/133'}
-        />
-         <Post
-          nomeUsuario={'Ana'}
-          fotoUsuario={'https://picsum.photos/50/51'}
-          fotoPost={'https://picsum.photos/200/152'}
-        />
-         <Post
-          nomeUsuario={'Daniel'}
-          fotoUsuario={'https://picsum.photos/50/49'}
-          fotoPost={'https://picsum.photos/200/149'}
-        />
-      </div>
-    );
+  constructor (props){
+    super(props);
+      this.state = {
+        arrayPosts:[
+          {
+            fotoUsuario: 'https://picsum.photos/50/50',
+            nomeUsuario: 'Paulinha',
+            fotoPost: 'https://picsum.photos/200/150'
+          },
+          {
+            fotoUsuario: 'https://picsum.photos/50/49',
+            nomeUsuario: 'Ana',
+            fotoPost: 'https://picsum.photos/200/151'
+          },
+          {
+            fotoUsuario: 'https://picsum.photos/50/52',
+            nomeUsuario: 'Daniel',
+            fotoPost: 'https://picsum.photos/200/145'
+          },
+        ]
+      };
   }
-}
+
+
+
+  render(){
+
+    const inserePost = this.state.arrayPosts.map((elemento, index, array) => {
+      return(
+        <Post
+          nomeUsuario = {elemento.nomeUsuario}
+          fotoUsuario = {elemento.fotoUsuario}
+          fotoPost = {elemento.fotoPost}
+          key = {index}
+        />
+      );
+    });
+
+      return (
+        <div className={'app-container'}>
+          {inserePost}
+        </div>
+      );
+  }  
+  
+}      
 
 export default App;
