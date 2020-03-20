@@ -26,7 +26,8 @@ class App extends React.Component {
 
         valorInputFotoUsuário:"",
         valorInputNomeDoUsuario:"",
-        valorInputFotoPost:""
+        valorInputFotoPost:"",
+
       };
   }
 
@@ -38,7 +39,7 @@ class App extends React.Component {
     };
   }
 
-  const novoPost = [...this.state.Post, novoPost];
+  novoPost = [...this.state.Post, novoPost];
 
   this.setState({post: novoPost});
 
@@ -74,34 +75,35 @@ class App extends React.Component {
       );
     });
 
-      return (
-        <div className={'app-container'}>
-          {inserePost}
-               
-          <input
-            value = {this.state.valorInputNomeDoUsuario}
-            onChange = {this.onChangeInputNomeDoUsuário}
-            placeholder = {"Nome do usuário"}
-          />
+    return (
+      <div className={'app-container'}>
+                       
+        <input
+          value = {this.state.valorInputNomeDoUsuario}
+          onChange = {this.onChangeInputNomeDoUsuário}
+          placeholder = {"Nome do usuário"}
+        />
 
-          <input
-            value = {this.state.valorInputFotoUsuário}
-            onChange = {this.onChangeInputFotoUsuario}
-            placeholder = {"Foto do usuário"}
-          />
+        <input
+          value = {this.state.valorInputFotoUsuário}
+          onChange = {this.onChangeInputFotoUsuario}
+          placeholder = {"Foto do usuário"}
+        />
 
-          <input
-            value = {this.state.valorInputFotoPost}
-            onChange = {this.onChangeInputFotoPost}
-            placeholder = {"Foto do post"}
-          />
+        <input
+          value = {this.state.valorInputFotoPost}
+          onChange = {this.onChangeInputFotoPost}
+          placeholder = {"Foto do post"}
+        />
 
-          <button onclick={this.adicionarNovoPost}>Adicionar Post</button>
-          
-        </div>
-      );
+        <button onclick={this.adicionarNovoPost}>Adicionar Post</button>
+
+        {inserePost}
+
+      </div>
+    );
       
-  }  
+  };  
   
 }      
 
