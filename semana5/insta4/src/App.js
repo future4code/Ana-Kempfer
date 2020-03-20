@@ -22,14 +22,47 @@ class App extends React.Component {
             nomeUsuario: 'Daniel',
             fotoPost: 'https://picsum.photos/200/145'
           },
-        ]
+        ].
+
+        valorInputFotoUsuário:"",
+        valorInputNomeDoUsuario:"",
+        valorInputFotoPost:""
       };
   }
+
+  adicionarNovoPost = () => {
+    const novoPost = {
+      fotoUsuario: this.state.valorInputFotoUsuário,
+      nomeUsuario: this.state.valorInputNomeDoUsuario,
+      fotoPost: this.state.valorInputFotoPost
+    };
+  }
+
+  const novoPost = [...this.state.Post, novoPost];
+
+  this.setState({post: novoPost});
+
+  onChangeInputFotoUsuario = event => {
+    this.setState({
+      valorInputFotoUsuário: event.target.value
+    });
+  };
+
+  onChangeInputNomeUsuario = event => {
+    this.setState({
+      valorInputNomeDoUsuario: event.target.value
+    });
+  };
+
+  onChangeInputFotoPost = event => {
+    this.setState({
+      valorInputFotoPost: event.target.value
+    });
+  };
 
 
 
   render(){
-
     const inserePost = this.state.arrayPosts.map((elemento, index, array) => {
       return(
         <Post
@@ -44,8 +77,30 @@ class App extends React.Component {
       return (
         <div className={'app-container'}>
           {inserePost}
+               
+          <input
+            value = {this.state.valorInputNomeDoUsuario}
+            onChange = {this.onChangeInputNomeDoUsuário}
+            placeholder = {"Nome do usuário"}
+          />
+
+          <input
+            value = {this.state.valorInputFotoUsuário}
+            onChange = {this.onChangeInputFotoUsuario}
+            placeholder = {"Foto do usuário"}
+          />
+
+          <input
+            value = {this.state.valorInputFotoPost}
+            onChange = {this.onChangeInputFotoPost}
+            placeholder = {"Foto do post"}
+          />
+
+          <button onclick={this.adicionarNovoPost}>Adicionar Post</button>
+          
         </div>
       );
+      
   }  
   
 }      
