@@ -30,6 +30,16 @@ const InputsContainer = styled.div`
   gap: 10px;
 `;
 
+const tarefaSalva = {tarefa: "texto"}
+
+localStorage.setItem("tarefaSalva", JSON.stringify(tarefaSalva))
+
+const tarefaString = localStorage.getItem("tarefaSalva")
+
+const tarefaStorage = JSON.parse(tarefaString)
+
+console.log(tarefaStorage.texto)
+
 class App extends React.Component {
   constructor(props) {
     super(props)
