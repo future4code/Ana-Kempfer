@@ -42,7 +42,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      numberOfPeople: "Nenhum" ,
+      numberOfPeople: "",
       sortedActivity: undefined
     };
   }
@@ -60,6 +60,18 @@ class App extends React.Component {
     
   };
 
+  onChangeNumberOfPeople = (event) => {
+    this.setState({sortedActivity: event.target.value})
+    console.log("sortedActivity trocado")
+  }
+
+  onSelectparticipant = (event) => {
+    this.setState({sortedActivity: event.target.value})
+    console.log("sortedActivity trocado")
+    
+    
+  };
+
 
 
   render(){
@@ -69,10 +81,10 @@ class App extends React.Component {
         <h3>Escolha o número de participantes:</h3>
         <p>*Devido as restrições ao contato social, limitamos as atividades
           ao máximo de dois participantes.</p>
-        <StiledSelect>
-          <option>Nenhum</option>
-          <option>1</option>
-          <option>2</option>
+        <StiledSelect onChange={this.onSelectparticipant}>
+          <option value="">Nenhum</option>
+          <option value="">1</option>
+          <option value="">2</option>
           
         </StiledSelect>
         <h3>Clique no botão e sorteie uma atividade!</h3>
