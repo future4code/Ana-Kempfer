@@ -60,18 +60,26 @@ class App extends React.Component {
     
   };
 
-  onChangeNumberOfPeople = (event) => {
-    this.setState({sortedActivity: event.target.value})
-    console.log("sortedActivity trocado")
+  changeNumberOfPeople = (event) => {
+    this.setState({numberOfPeople: event.target.value});
+    console.log("sortedActivity trocado", event.target.value)
   }
 
   onSelectparticipant = (event) => {
-    this.setState({sortedActivity: event.target.value})
-    console.log("sortedActivity trocado")
     
-    
+        
   };
-
+  // alteraMin = novoFilterMin => {
+  //   if (novoFilterMin !== "") {
+  //     this.setState({
+  //       filterMin: novoFilterMin
+  //     })
+  //   } else {
+  //     this.setState({
+  //       filterMin: null
+  //     })
+  //   }
+  // }
 
 
   render(){
@@ -81,10 +89,10 @@ class App extends React.Component {
         <h3>Escolha o número de participantes:</h3>
         <p>*Devido as restrições ao contato social, limitamos as atividades
           ao máximo de dois participantes.</p>
-        <StiledSelect onChange={this.onSelectparticipant}>
+        <StiledSelect onChange={this.changeNumberOfPeople}>
           <option value="">Nenhum</option>
-          <option value="">1</option>
-          <option value="">2</option>
+          <option >1</option>
+          <option >2</option>
           
         </StiledSelect>
         <h3>Clique no botão e sorteie uma atividade!</h3>
