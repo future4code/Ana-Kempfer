@@ -81,7 +81,7 @@ class App extends React.Component {
       })
     }else{
       console.log("Não definido o número de participantes.");
-      // return alert("Escolha o número de participantes. ");
+      return alert("Escolha o número de participantes. ");
     }
   };
 
@@ -92,7 +92,7 @@ class App extends React.Component {
         <Container>
           <h1>Atividades para a quarentena</h1>
           <h3>Escolha o número de participantes:</h3>
-          <p>*Devido as restrições ao contato social, limitamos as atividades
+          <p>*Devido as restrições ao contato social limitamos as atividades
             até o máximo de dois participantes.</p>
           <StiledSelect onChange={this.changeNumberOfPeople}>
             <option value="">Nenhum</option>
