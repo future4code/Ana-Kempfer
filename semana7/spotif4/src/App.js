@@ -69,7 +69,8 @@ const StyledInput = styled.input`
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  width: 80%;
+  width: 50%;
+  margin-left: 250px;
 `;
 
 const ContainerPlaylists = styled.div`
@@ -157,19 +158,18 @@ class App extends React.Component{
   };
 
   onChangePlaylistSelected = (event) => {
-    // this.setState({playlistSelected: event.target.value });
-    // console.log("Playlist event change:", event.target.value)
+    
   } 
 
   detailsPlaylist = () => {
     const playlistInfos = {
-      id: this.state.playlists.map((playlist,index) => 
-      playlist.id
+      name: this.state.playlists.map((playlist,index) => 
+      playlist.name
       )
 
 
     };
-    console.log("name", playlistInfos);
+    console.log("id", playlistInfos);
     
   }
   
@@ -188,7 +188,7 @@ class App extends React.Component{
           onChange={this.onChangeInput} 
           value={this.state.inputValue}          
           />
-          <p style={{ color: "red" }}>{this.state.errorMessage}</p>
+          <p>{this.state.errorMessage}</p>
           <ContainerButtons>
             <CreatePlaylistButton onClick={this.createPlaylist}>
               <strong>Criar Playlist</strong>
@@ -201,7 +201,7 @@ class App extends React.Component{
             {this.state.playlists.map((playlist) => {
               return <PlaylistLi onClick={this.detailsPlaylist} 
                 onChange={this.onChangePlaylistSelected}
-                value={this.state.playlistSelected}>
+                value={playlist.id}>
                 {playlist.name} 
               </PlaylistLi>;
             })}
