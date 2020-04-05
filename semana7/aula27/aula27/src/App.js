@@ -79,7 +79,7 @@ class App extends React.Component {
         console.log("atividade sorteada com o número de participantes: ", response.data);
         this.setState({ sortedActivity: response.data});
       })
-    }else{
+    }else{ a
       console.log("Não definido o número de participantes.");
       return alert("Escolha o número de participantes. ");
     }

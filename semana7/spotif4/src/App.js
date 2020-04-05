@@ -1,37 +1,89 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import CreatePlaylist from './components/createPlaylist/CreatePlaylist';
-import DetailsPlaylist from './components/detailsPlaylist/DetailsPlaylist';
+
 
 
 const Appcontainer = styled.div`
   text-align: center;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,4,60,1) 100%, rgba(0,212,255,1) 100%);
+  background-color: #121212;
   min-height: 100vh;
-  display: flex;
   font-size: calc(10px + 2vmin);
   color: white;
   border: 20px;
+  display: flex;
+  flex-direction: column;
+  alig-itens: center;
+  justify-content: center;
 `;
 
-const PlaylistContainer = styled.div`
+const ContainerInfos = styled.div`
+  background-color: 	#212121;
+  width: 80%;
+  height: 80%;
+  border: 1px #535353 solid;
+  margin-left: 8%;  
   text-align: center;
   display: flex;
   flex-direction: column;
   alig-itens: center;
   justify-content: center;
   padding: 30px;
-  right: 0;
-
 `;
 
-const ContainerInput = styled.div`
-  border: 1px red solid;
+const ContainerButtons = styled.div`
+  display: flex;
+  widht: 100%;
+  alig-itens: center;
+  justify-content: center;
+`;
+
+const ShowPlaylistsButton = styled.button`
+  background-color: #1db954;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 200px;
+  padding: 10px; 
+  cursor: pointer; 
+`;
+
+const CreatePlaylistButton = styled.button`
+  background-color: #1db954;
+  margin: 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+`;
+
+const StyledInput = styled.input`
+  background-color: #b3b3b3;
+  border: 1px #535353 solid;
+  font-size: calc(10px + 2vmin);
   border-radius: 10px;
   padding: 20px;
-  margin: 30px;
+  margin: 10px;
+  width: 80%;
+`;
+
+const ContainerPlaylists = styled.div`
+  display: flex;
+  flex-direction: column;
+  alig-itens: center;
+  justify-content: center;
+  
+`;
+
+const PlaylistLi =styled.li`
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
 `;
 
 
@@ -39,19 +91,22 @@ const ContainerInput = styled.div`
 class App extends React.Component{
   constructor(props){
     super(props);
-
     this.state = {
-        nameOfPlaylist: "",
-        listOfPlaylists: [], 
+        inputValue: "",
+        playlists: [],
+        errorMessage: undefined,
+        playlistSelected: "",
+         
     };
   };
 
   componentDidMount() {
-    this.foundPlaylists();
+   
   }
 
   foundPlaylists = () => {
-    axios.get(
+    axios
+      .get(
         "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists",
         {
           headers: {
@@ -60,24 +115,24 @@ class App extends React.Component{
         }
       )
       .then((resposta) => {
-        const playlistsFromApi = resposta.data.result.list;
-        console.log(resposta);
-        this.setState({ listOfPlaylists: playlistsFromApi });
-        })
+        const playlistsDaApi = resposta.data.result.list;
+
+        this.setState({ playlists: playlistsDaApi });
+      })
       .catch((error) => {
         console.log(error);
-        this.setState({ errorMessage: "Erro ao localizar as playlists na API" });
-      }
-    );
+        this.setState({ errorMessage: "Erro ao localizar playlists na API" });
+      });
   };
 
   onChangeInput = (event) => {
-    this.setState({nameOfPlaylist: event.target.value });
+    this.setState({ inputValue: event.target.value });
+    console.log("Valor do input: ", event.target.value);
   };
 
   createPlaylist = () => {
     const body = {
-      name: this.state.nameOfPlaylist
+      name: this.state.inputValue
     };
 
     axios
@@ -91,31 +146,67 @@ class App extends React.Component{
         }
       )
       .then((resposta) => {
-        console.log("Playlist criada com sucesso.");
-        this.foundPlaylists();
+        console.log("Playlist criada")
+        alert("Playlist criada com sucesso");
+        
       })
       .catch((error) => {
-        this.setState({ errorMessage: "Erro ao criar a playlist." });
-      }
-    );
+        console.log("Erro ao criar playlist")
+        this.setState({ errorMessage: "Erro ao criar Playlist" });
+      });
   };
 
+  onChangePlaylistSelected = (event) => {
+    // this.setState({playlistSelected: event.target.value });
+    // console.log("Playlist event change:", event.target.value)
+  } 
+
+  detailsPlaylist = () => {
+    const playlistInfos = {
+      id: this.state.playlists.map((playlist,index) => 
+      playlist.id
+      )
+
+
+    };
+    console.log("name", playlistInfos);
+    
+  }
+  
+   
+  
   render() {
+    
+
+
     return (
       <Appcontainer>
-        <p style={{ color: "red" }}>{this.state.errorMessage}</p>
-        <ContainerInput>
-          <input onChange={this.onChangeInput} value={this.state.nameOfPlaylist} />
-          <button onClick={this.createPlaylist}>Criar</button>
-        </ContainerInput>
-
-        <PlaylistContainer>
-            <ul>
+        <ContainerInfos>
+          <h1>Spotif4</h1>
+          <h3>Insira o nome da sua nova Playlist</h3>
+          <StyledInput 
+          onChange={this.onChangeInput} 
+          value={this.state.inputValue}          
+          />
+          <p style={{ color: "red" }}>{this.state.errorMessage}</p>
+          <ContainerButtons>
+            <CreatePlaylistButton onClick={this.createPlaylist}>
+              <strong>Criar Playlist</strong>
+            </CreatePlaylistButton>
+            <ShowPlaylistsButton onClick={this.foundPlaylists}>
+              <strong>Ver minhas playlists</strong>
+            </ShowPlaylistsButton>
+          </ContainerButtons>
+          <ContainerPlaylists>
             {this.state.playlists.map((playlist) => {
-                return <li>{playlist.name}</li>;
+              return <PlaylistLi onClick={this.detailsPlaylist} 
+                onChange={this.onChangePlaylistSelected}
+                value={this.state.playlistSelected}>
+                {playlist.name} 
+              </PlaylistLi>;
             })}
-        </ul>
-        </PlaylistContainer>
+          </ContainerPlaylists>
+        </ContainerInfos>
       </Appcontainer>
     );
   };
