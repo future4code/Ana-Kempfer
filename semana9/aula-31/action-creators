@@ -1,0 +1,55 @@
+1. Crie **action-creators** para todas as actions que você mapeou. 
+
+function addAll(taskText) { 
+    return{
+        type: 'ADD_ALL',
+        payload: {
+        taskText: taskText
+        }          
+    }
+}
+function deleteAll(taskId) { 
+    return{
+        type: 'DELETE_ALL',
+        payload: {
+        taskId: taskId
+        } 
+    }
+}
+function editAll(taskId, taskText) { 
+    return{
+        type: 'EDIT_All', 
+        payload: {
+        taskText: taskText
+        taskId: taskId
+        }
+    }
+}
+function completeAll(taskId) { 
+    return{
+        type: 'COMPLETE_ALL',
+        payload: {
+        taskId: taskId
+        }         
+    }
+}
+function completeAllAny() { 
+    return{
+        type: 'COMPLETE_ALL_ANY'        
+    } 
+}
+function clearCompleted() { 
+    return{
+        type: 'CLEAR_COMPLETED'        
+    } 
+}
+function filterVisibility(taskFilter) {
+    return{ 
+        type: 'FILTER_VISIBILITY',
+        payload: {
+        taskFilter: taskFilter
+        }        
+    }
+}
+
+
