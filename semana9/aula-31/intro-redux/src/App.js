@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware} from 'redux';
 import { rootReducer } from './reducers';
+import thunk from 'redux-thunk';
 import TaskForm from './components/taskForm';
 import TaskList from './components/taskList';
 import ToolBar from './components/toolBar';
@@ -19,7 +20,7 @@ const ContainerApp = styled.div`
   color: white;
 `;
 
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 function App() {
   return (
