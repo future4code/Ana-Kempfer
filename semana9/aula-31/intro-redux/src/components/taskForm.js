@@ -15,7 +15,8 @@ class TaskForm  extends React.Component {
   };
 
   onClickAdd = () => {
-    this.props.addTask(this.state.inputText)
+    this.props.addTask(this.state.inputText);
+    this.setState({inputText:""});
   };
 
   render(){
@@ -44,7 +45,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
       addTask: (text) => {
-        dispatch(addTask(text))
+        dispatch(addTask(text));
       }
   };
 };

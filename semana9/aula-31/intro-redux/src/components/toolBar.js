@@ -1,34 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { completeAllTasks, deleteAllComplete, setFilter } from '../actions/todos';
 
-class ToolBar extends React.Component  {
-  render(){
-    return (
+const ToolBar = props =>  {
+     return (
       <div>
-        <button>Marcar todas como completas</button>
+        <button onClick={props.completeAllTasks}>Marcar todas como completas</button>
         <p>Filtros:</p>
-        <button>Todas</button>
-        <button>Pendentes</button>
-        <button>Completas</button>
+        <button onClick={() => props.setFilter('todas')}>Todas</button>
+        <button onClick={() => props.setFilter('pendentes')}>Pendentes</button>
+        <button onClick={() => props.setFilter('completas')}>Completas</button>
         <div>
-          <button>Remover completas</button>
+          <button onClick={props.deleteAllComplete}>Remover completas</button>
         </div>
       </div>
     );
-  }    
+     
 };
 
-const mapStateToProps = (state) => {
-    return{
-      
-    }
-}
 
-const mapDispatchToProps = () => {
-  return{}
-}
+const mapDispatchToProps = (dispatch) => {
+  return{
+    completeAllTasks: () => dispatch(completeAllTasks()),
+    deleteAllComplete: () => dispatch(deleteAllComplete()),
+    setFilter: (filter) => dispatch(setFilter(filter))
+  };
+};
 
 export default connect(
-  mapStateToProps, 
+  null,
   mapDispatchToProps
   )(ToolBar);

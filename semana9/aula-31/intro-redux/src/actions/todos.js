@@ -23,24 +23,17 @@ export const deleteTask = (id) => {
         }  
     };
 };
-export const completeTodo = (id) => {
+export const completeAllTasks = (id) => {
     return{
-        type: "COMPLETE_TODO",
-        payload:{
-            id: id,
-        }  
-    }
-}
-export const completeAllTodos = () => {
+        type: "COMPLETE_ALL_TASKS",         
+    };
+};
+export const deleteAllComplete = () => {
     return{
-        type: "COMPLETE_ALL_TODOS"
-    } 
-}
-export const clearCompleted = () => {
-    return{
-        type: "CLEAR_COMPLETED" 
-    }
-}
+        type: "DELETE_ALL_COMPLETE"
+    };
+};
+
 export const setFilter = (filter) => {
     return{
         type: "SET_FILTER",
