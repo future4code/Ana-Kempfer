@@ -1,4 +1,5 @@
 
+//FUNÇÕES SINCRONAS
 export const addTask = text => {
     return{
         type: "ADD_TASK",
@@ -41,4 +42,26 @@ export const setFilter = (filter) => {
             filter: filter
         } 
     }
+}
+
+//FUNÇÕES ASSINCRONAS
+
+const addTask = () => (dispatch, getState) => {
+
+}
+
+const toggleTask = () => (dispatch, getState) => {
+
+}
+
+const deleteTask = () => (dispatch, getState) => {
+
+}
+
+const completeAllTasks = () => (dispatch, getState) => {
+
+}
+
+const deleteAllComplete = () => (dispatch, getState) => {
+    
 }
