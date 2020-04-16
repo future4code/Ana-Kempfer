@@ -48,12 +48,6 @@ export const setFilter = (filter) => {
 
 //FUNÇÕES ASSINCRONAS
 
-export const fetchTasks = () => async (dispatch, getState) => {
-    const response = await axios.get(
-        'https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/ana/todos',
-    )
-    dispatch(setTodos(response.data.todos))
-};
 
 export const addTask = (text) => async (dispatch, getState) => {
     const response = await axios.post(
@@ -64,28 +58,28 @@ export const addTask = (text) => async (dispatch, getState) => {
         }
     
     );
-    dispatch(fetchTasks())
+    dispatch()
 };
 
 export const toggleTask = (id) => async (dispatch, getState) => {
     const response = await axios.put(
         `https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/ana/todos/${id}/toggle`
     );
-    dispatch(fetchTask())
+    dispatch()
 };
 
 export const deleteTask = (id) => async (dispatch, getState) => {
     const response = await axios.del(
         `https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/ana/todos/${id}`
     );
-    dispatch(fetchTask())
+    dispatch()
 };
 
 export const deleteAllComplete = () => async (dispatch, getState) => {
     const response = await axios.del(
         `https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/ana/todos/delete-done`
     );
-    dispatch(fetchTask())
+    dispatch()
 };
 
 // POST https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/:ana/todos
