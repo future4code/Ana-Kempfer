@@ -38,17 +38,21 @@ class MatchScreen extends Component {
 	}
 }
 
+
+const mapStateToProps = state => ({
+	matches: state.profiles.matches,
+})
+
+const mapDispatchToProps = dispatch => ({
+	goToSwipeScreen: () => dispatch(updateCurrentPage('SwipeScreen')),
+	getMatches: () => dispatch(getMatches()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MatchScreen)
+
+
 MatchScreen.propTypes = {
 	goToSwipeScreen: PropTypes.func.isRequired,
 	getMatches: PropTypes.func.isRequired,
 	matches: PropTypes.array
 }
-
-const mapStateToProps = state => ({
-})
-
-const mapDispatchToProps = dispatch => ({
-	goToSwipeScreen: () => dispatch(updateCurrentPage('SwipeScreen')),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(MatchScreen)
