@@ -8,7 +8,6 @@ import {mdiAccountMultipleCheck} from '@mdi/js'
 import {swipeLeft, swipeRight} from '../../components/UserSwipeCard/styled'
 import {updateCurrentPage} from '../../actions/route'
 import {Loader} from '../../components/Loader'
-import {chooseProfile, clearSwipes, getProfileToSwipe} from '../../actions/profiles'
 
 export class SwipeScreen extends Component {
 	constructor(props) {
@@ -24,20 +23,12 @@ export class SwipeScreen extends Component {
 		}
 	}
 
-	componentDidMount(){
-		if (this.props.profileToSwipe && this.props.getProfileToSwipe){
-			this.props.getProfileToSwipe()
-		}
-	}
-
 	componentDidUpdate(prevProps, prevState, snapshot) {
 		if (prevProps.profileToSwipe !== this.props.profileToSwipe) {
 			this.setState({currentAnimation: null})
 		}
 	}
 
-	//ACREDITO QUE O BUG DA TROCA DE IMAGENS ESTEJA AQUI
-	//VOLTAR E VERIFICAR POR ULTIMO
 	onChooseOption = (option) => () => {
 		let currentAnimation = option === 'dislike' ? swipeRight : swipeLeft
 
@@ -87,14 +78,11 @@ SwipeScreen.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-	profileToSwipe: state.profiles.profileToSwipe
 })
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
-		chooseProfile: (id,choice) => dispatch(chooseProfile(id,choice)),
-		getProfileToSwipe: () => dispatch(getProfileToSwipe())
 	}
 }
 
