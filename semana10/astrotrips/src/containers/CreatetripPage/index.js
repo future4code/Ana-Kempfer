@@ -4,6 +4,8 @@ import { push } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
+import Input from '@material-ui/core/Input';
+
 
 const CreateWrapper = styled.form`
   width: 100%;
@@ -13,6 +15,8 @@ const CreateWrapper = styled.form`
   justify-items: center;
   display: grid;
 `;
+
+
 
 class CreateTrip extends Component {
   constructor(props) {
@@ -35,6 +39,7 @@ class CreateTrip extends Component {
 
   render() {
     const { name, planet, date, description, duration } = this.state;
+    
 
     return (
       <CreateWrapper>
@@ -43,44 +48,52 @@ class CreateTrip extends Component {
           name="name"
           type="text"
           label="name"
-          value={this.state.name || ""}
+          value={{name} || ""}
           required
-          inputProps={{ pattern: "[A-Za-z]{5,}"}}          
+          inputProps={{ pattern: "[A-Za-z \dáÁ_e]{5,100}"}}          
         />
-        <TextField
-          onChange={this.handleFieldChange}
-          name="planet"
-          type="dropdown"
-          label="planet"
-          value={this.state.planet || ""}
-          required
-          inputProps={{ pattern: "[A-Za-z]{5}"}}          
-        />
+        
+        <select
+          value={{planet} || ""}
+          onChange={this. handleFieldChange}
+          input={<Input name="planet" id="planet" />}
+        >
+          <option value="">Planeta</option>
+          <option value="mercurio">Mercúrio</option>
+          <option value="venus">Vênus</option>
+          <option value="terra">Terra</option>
+          <option value="marte">Marte</option>
+          <option value="jupiter">Júpiter</option>
+          <option value="saturno">Saturno</option>
+          <option value="urano">Urano</option>
+          <ption value="netuno">Neturno</ption>
+        </select>
+
         <TextField
           onChange={this.handleFieldChange}
           name="date"
           type="date"
-          value={this.state.date || ""}
+          value={{date} || ""}
           required
-          inputProps={{ pattern: "(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}"}}          
+          inputProps={{ pattern: "(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[12])/(20/20)\d{4}"}}          
         />
         <TextField
           onChange={this.handleFieldChange}
           name="description"
           type="text"
           label="description"
-          value={this.state.description || ""}
+          value={{description} || ""}
           required
-          inputProps={{ pattern: "[A-Za-z]{30,}"}}         
+          inputProps={{ pattern: "[A-Za-z \dáÁ_e]{30,2000}"}}         
         />
         <TextField
           onChange={this.handleFieldChange}
           name="duration"
           type="number"
           label="duration"
-          value={this.state.duration || ""}
+          value={{duration} || ""}
           required
-          inputProps={{ pattern: ""}}          
+          inputProps={{ min: "1", max:"1000"}}          
         />
         <Button>Criar viagem</Button>
       </CreateWrapper>

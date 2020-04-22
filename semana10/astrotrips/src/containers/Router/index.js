@@ -3,6 +3,7 @@ import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import CreateTripPage from "../CreatetripPage";
+import ApplicationFormPage from "../ApplicationForm";
 
 
 
@@ -10,6 +11,7 @@ import CreateTripPage from "../CreatetripPage";
 const routes = {
   root: "/",
   createTrip: "/trip/create",
+  applicationForm: "/application-form"
   // Outras rotas aqui
 };
 
@@ -18,7 +20,9 @@ function Router(props) {
     <ConnectedRouter history={props.history}>
       <Switch>
         {/* <Route path={routes.root} component={LoginPage} /> */}
-        <Route path={routes.root} component={CreateTripPage}/>
+        {/* <Route path={routes.root} component={CreateTripPage}/> */}
+        <Route path={routes.applicationForm} component={ApplicationFormPage}/>
+
       </Switch>
     </ConnectedRouter>
   );
