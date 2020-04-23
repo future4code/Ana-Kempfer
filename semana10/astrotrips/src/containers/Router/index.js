@@ -16,18 +16,17 @@ const routes = {
   application: "/application-form",
   tripsList: "/trips/list",
   tripDetails: "/trips/details"
-  // Outras rotas aqui
 };
 
 function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
-        <Route path={routes.login} component={LoginPage} /> 
+        {/* <Route path={routes.login} component={LoginPage} /> 
         <Route path={routes.creatTrip} component={CreateTripPage}/>
-        <Route path={routes.application} component={ApplicationFormPage}/>
+        <Route path={routes.application} component={ApplicationFormPage}/> */}
         <Route path={routes.root} component={ListTripsPage}/>
-        <Route path={routes.tripDetails} component={TripsDetailsPage}/>
+        {/* <Route path={routes.tripDetails} component={TripsDetailsPage}/> */}
 
       </Switch>
     </ConnectedRouter>
