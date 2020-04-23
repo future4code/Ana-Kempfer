@@ -19,6 +19,14 @@ const ApplicationFormWrapper = styled.form`
 `;
 
 const options = [
+  "Mercúrio",
+  "Vênus",
+  "Terra",
+  "Marte",
+  "Júpiter",
+  "Saturno",
+  "Urano",
+  "Netuno"
   // RECEBE O ID DAS TRIPS CADASTRADAS NA API E RETORNA O NOME DELAS. 
 ];
 
@@ -50,13 +58,15 @@ class ApplicationForm extends Component {
     
 
     return (
+      
       <ApplicationFormWrapper>
+        <h2>Formulário de incrição para uma viagem:</h2>
         <TextField
           onChange={this.handleFieldChange}
           name="name"
           type="text"
           label="name"
-          value={{name} || ""}
+          value={name}
           required
           inputProps={{ pattern: "[A-Za-z áÁ_e]{3,}"}}          
         />
@@ -65,7 +75,8 @@ class ApplicationForm extends Component {
           onChange={this.handleFieldChange}
           name="age"
           type="number"
-          value={{age} || ""}
+          value={age}
+          placeholder="Idade"
           required
           inputProps={{ min:"18"}}          
         />
@@ -74,7 +85,7 @@ class ApplicationForm extends Component {
           name="applicationText"
           type="text"
           label="applicationText"
-          value={{applicationText} || ""}
+          value={applicationText}
           required
           inputProps={{ pattern: "[A-Za-z \dáÁ_e]{30,}"}}         
         />
@@ -83,7 +94,7 @@ class ApplicationForm extends Component {
           name="profession"
           type="text"
           label="profession"
-          value={{profession} || ""}
+          value={profession}
           required
           inputProps={{ pattern: "[A-Za-z áÁ]{10,}" }}          
         />
@@ -91,9 +102,9 @@ class ApplicationForm extends Component {
         <Dropdown 
           options={options} 
           onChange={this.handleFieldChange} 
-          value={{trip} || ""} 
-          placeholder="Selecione uma viagem"
-        />;
+          value={trip} 
+          label="Viagens disponíveis"
+        />
 
         <CountryDropdown
           value={{country} || ""}

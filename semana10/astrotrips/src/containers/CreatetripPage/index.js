@@ -16,6 +16,25 @@ const CreateWrapper = styled.form`
   display: grid;
 `;
 
+const todayDate = () => {
+  let today = new Date();
+  let day = today.getDate();
+  let month = today.getMonth()+1;
+  let year = today.getFullYear();
+       if(day<10 && month<10){
+              day='0'+day
+              month='0'+month
+              return year+'-'+month+'-'+day;
+          }else if(month<10){
+            month='0'+month
+            return year+'-'+month+'-'+day;
+          }else if(day<10){
+            day='0'+day
+            return year+'-'+month+'-'+day;
+          }else {
+          return year+'-'+month+'-'+day;
+        }
+}
 
 
 class CreateTrip extends Component {
@@ -43,6 +62,7 @@ class CreateTrip extends Component {
 
     return (
       <CreateWrapper>
+        <h2>Criar uma nova viagem:</h2>
         <TextField
           onChange={this.handleFieldChange}
           name="name"
@@ -75,7 +95,7 @@ class CreateTrip extends Component {
           type="date"
           value={{date} || ""}
           required
-          inputProps={{ pattern: "(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[12])/(20/20)\d{4}"}}          
+          inputProps={{ min: "todayDate()" }}          
         />
         <TextField
           onChange={this.handleFieldChange}
