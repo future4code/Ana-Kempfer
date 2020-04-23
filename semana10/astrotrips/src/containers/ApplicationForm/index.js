@@ -60,12 +60,12 @@ class ApplicationForm extends Component {
     return (
       
       <ApplicationFormWrapper>
-        <h2>Formulário de incrição para uma viagem:</h2>
+        <h2>Formulário de incrição:</h2>
         <TextField
           onChange={this.handleFieldChange}
           name="name"
           type="text"
-          label="name"
+          label="Nome"
           value={name}
           required
           inputProps={{ pattern: "[A-Za-z áÁ_e]{3,}"}}          
@@ -84,7 +84,7 @@ class ApplicationForm extends Component {
           onChange={this.handleFieldChange}
           name="applicationText"
           type="text"
-          label="applicationText"
+          label="Justifique sua inscrição"
           value={applicationText}
           required
           inputProps={{ pattern: "[A-Za-z \dáÁ_e]{30,}"}}         
@@ -93,7 +93,7 @@ class ApplicationForm extends Component {
           onChange={this.handleFieldChange}
           name="profession"
           type="text"
-          label="profession"
+          label="Profissão"
           value={profession}
           required
           inputProps={{ pattern: "[A-Za-z áÁ]{10,}" }}          
@@ -116,4 +116,11 @@ class ApplicationForm extends Component {
   }
 }
 
-export default ApplicationForm;
+function mapDispatchToProps(dispatch){
+  return{
+    goToListTripsPage: () => dispatch(push('/application-form')),
+  }
+}
+
+export default connect(mapDispatchToProps)(ApplicationForm);
+

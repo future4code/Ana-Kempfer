@@ -67,14 +67,14 @@ class CreateTrip extends Component {
           onChange={this.handleFieldChange}
           name="name"
           type="text"
-          label="name"
-          value={{name} || ""}
+          label="Nome"
+          value={name}
           required
           inputProps={{ pattern: "[A-Za-z \dáÁ_e]{5,100}"}}          
         />
         
         <select
-          value={{planet} || ""}
+          value={planet}
           onChange={this. handleFieldChange}
           input={<Input name="planet" id="planet" />}
         >
@@ -93,7 +93,7 @@ class CreateTrip extends Component {
           onChange={this.handleFieldChange}
           name="date"
           type="date"
-          value={{date} || ""}
+          value={date}
           required
           inputProps={{ min: "todayDate()" }}          
         />
@@ -101,8 +101,8 @@ class CreateTrip extends Component {
           onChange={this.handleFieldChange}
           name="description"
           type="text"
-          label="description"
-          value={{description} || ""}
+          label="Descrição"
+          value={description}
           required
           inputProps={{ pattern: "[A-Za-z \dáÁ_e]{30,2000}"}}         
         />
@@ -110,8 +110,8 @@ class CreateTrip extends Component {
           onChange={this.handleFieldChange}
           name="duration"
           type="number"
-          label="duration"
-          value={{duration} || ""}
+          label="Duração"
+          value={duration} 
           required
           inputProps={{ min: "1", max:"1000"}}          
         />
@@ -121,4 +121,13 @@ class CreateTrip extends Component {
   }
 }
 
-export default CreateTrip;
+function mapDispatchToProps(dispatch){
+  return{
+    goToListTripsPage: () => dispatch(push('/')),
+  }
+}
+
+export default connect(mapDispatchToProps)(CreateTrip);
+
+
+

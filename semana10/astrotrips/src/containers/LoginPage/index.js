@@ -54,4 +54,12 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+function mapDispatchToProps(dispatch){
+  return{
+    goToListTripsPage: () => dispatch(push('/')),
+    
+  }
+}
+
+export default connect(mapDispatchToProps)(LoginPage);
+

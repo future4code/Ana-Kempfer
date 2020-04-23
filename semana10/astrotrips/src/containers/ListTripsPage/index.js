@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
 
-const TripsDetailsWrapper = styled.form`
+const ListTripsWrapper = styled.form`
   width: 100%;
   height: 100vh;
   gap: 10px;
@@ -12,18 +12,11 @@ const TripsDetailsWrapper = styled.form`
   display: grid;
 `;
 
-class TripsDetailsPage extends Component {
+class ListTripsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viagem: [{
-          id: "",
-          name: "",
-          planet: "",
-          date: "",
-          description: "",
-          duration: ""
-      }]
+      tripsList: []
     };
   }
 
@@ -37,11 +30,11 @@ class TripsDetailsPage extends Component {
     const {  } = this.state;
 
     return (
-      <TripsDetailsWrapper>
-          <h1>Detalhes da viagem:</h1>
+      <ListTripsWrapper>
+          <h1>Lista de viagens disponíveis:</h1>
        
         
-      </TripsDetailsWrapper>
+      </ListTripsWrapper>
     );
   }
 }
@@ -49,9 +42,10 @@ class TripsDetailsPage extends Component {
 function mapDispatchToProps(dispatch){
   return{
     goToListTripsPage: () => dispatch(push('/')),
+    goToTripDetailsPage: () => dispatch(push('/trips/details')),
   }
 }
 
-export default connect(mapDispatchToProps)(TripsDetailsPage);
+export default connect(mapDispatchToProps)(ListTripsPage);
 
 
