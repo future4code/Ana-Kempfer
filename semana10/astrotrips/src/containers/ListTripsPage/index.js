@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
+import { 
+  getTrips,
+  setTrips,
+ } from "../../actions"
 
 const ListTripsWrapper = styled.form`
   width: 100%;
@@ -13,25 +17,25 @@ const ListTripsWrapper = styled.form`
 `;
 
 class ListTripsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tripsList: []
-    };
+  
+  componentDidMount(){
+    this.state.getTrips();
   }
 
-  handleFieldChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
 
   render() {
-    const {  } = this.state;
-
     return (
       <ListTripsWrapper>
           <h1>Lista de viagens disponíveis:</h1>
+          <div>
+                {this.props.getTrips.map(trip => {
+                    return (
+                      <li key={trip.id}>
+                        {trip}                            
+                      </li>
+                    )
+                })}
+          </div>
        
         
       </ListTripsWrapper>
@@ -39,13 +43,21 @@ class ListTripsPage extends Component {
   }
 }
 
+const mapStatetoProps = (state) => {
+  return {
+      allTrips: state.trips.allTrips
+  }
+}
+
+
 function mapDispatchToProps(dispatch){
   return{
+    getTrips: () => dispatch(),
     goToListTripsPage: () => dispatch(push('/')),
     goToTripDetailsPage: () => dispatch(push('/trips/details')),
   }
 }
 
-export default connect(mapDispatchToProps)(ListTripsPage);
+export default connect(mapStatetoProps, mapDispatchToProps)(ListTripsPage);
 
 

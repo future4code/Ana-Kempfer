@@ -5,7 +5,7 @@ import axios from "axios";
 export const setTrips = allTrips => ({
     type: "SET_TRIPS",
     payload:{
-        alltrips
+        allTrips
     }
 })
 
