@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router/index"
 import { getAllTrips } from "../../actions/trips"
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import { setSelectedTripId } from "../../actions/trips"
 import { GridAllTrips } from "../../style/listTripPage"
 import ContainerTripCard from "../../components/TripCard/index"
@@ -35,10 +34,10 @@ class ListTripPage extends Component {
   render() {
     return (
       <MainContainer>
-        <Header>
-          <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-          <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
-        </Header>
+         <Header>
+            <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
+            <h1>FutureX</h1>
+          </Header>
         <Banner src={BannerImg}/>
         <GridAllTrips>
           {this.props.allTrips.map((trip) => (
@@ -61,6 +60,7 @@ class ListTripPage extends Component {
             </ContainerTripCard>
           ))}
       	</GridAllTrips>
+        <Footer/>
       </MainContainer>
     );
   }

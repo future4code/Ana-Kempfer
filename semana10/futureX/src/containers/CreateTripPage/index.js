@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import { routes } from "../Router";
 import { createTrip } from "../../actions/trips";
 import FormCard from "../../components/FormCard";
@@ -79,10 +78,10 @@ class CreateTripPage extends Component {
   render() {
     return (
       <MainContainer>
-      <Header>
-        <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-        <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
-      </Header>
+       <Header>
+            <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
+            <h1>FutureX</h1>
+          </Header>
       <Banner src={BannerImg}/>
       <FormCard>
         <Title>Nova Viagem</Title>

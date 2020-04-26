@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import { routes } from "../Router";
 import FormCard from "../../components/FormCard";
 import { Title, ContainerSelect, ContainerInput } from "../../style/forms";
@@ -15,13 +14,12 @@ import { applicateUser } from "../../actions/user"
 import Select from '@material-ui/core/Select';
 
 
-const appicationForm = [
-  {
+const appicationForm = [{
     name: "name",
     type: "text",
     label: "Nome",
     pattern: "^[a-zA-Z]{3,}$",
-    placeholder: "Nome Completo"
+    placeholder: "Nome"
   },
   {
     name: "age",
@@ -34,9 +32,9 @@ const appicationForm = [
   {
     name: "applicationText",
     type: "text",
-    label: "Carta de intenção",
+    label: "Justificativa",
     pattern: "^[A-Za-z_]{30,}$", 
-    placeholder: "Por que deve ser escolhido"     
+    placeholder: "Justifique o porque deve ser escolhido"     
   },
   {
     name: "profession",
@@ -78,13 +76,13 @@ class ApplicationPage extends Component {
   render() {
     return (
       <MainContainer>
-        <Header>
-          <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-          <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
-        </Header>
+         <Header>
+            <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
+            <h1>FutureX</h1>
+          </Header>
         <Banner src={BannerImg}/>
         <FormCard>
-          <Title>Inscreva-se</Title>
+          <Title>Formulário de inscrição</Title>
             <form onSubmit={this.handleOnSubmit}>
               {appicationForm.map( input => (
                 <ContainerInput key={input.name}>
@@ -358,15 +356,16 @@ class ApplicationPage extends Component {
               </ContainerSelect>
               <ContainerSelect>
                 <Select name="tripId" onChange={this.handleInputChange} value={this.state.form.tripId} autoWidth native required>
-                  <option>Vigens*</option>
+                  <option>Viagens disponíveis*</option>
                   {this.props.allTrips.map( trip => (
                     <option value={trip.id}>{trip.name} - {trip.planet}</option>
                   ))}
                 </Select>
               </ContainerSelect>
-              <Button fullWidth color="primary" size="large" onClick={this.sendFormData}>Enviar</Button>
+              <Button fullWidth color="secondary" size="large" onClick={this.sendFormData}>Enviar</Button>
             </form>
         </FormCard>
+        <Footer/>
       </MainContainer>
     );
   }

@@ -11,4 +11,5 @@ export const LoginWrapper = styled.form`
     z-index: 9;
     position: center;
     top: 50%;
-`;
+`
+

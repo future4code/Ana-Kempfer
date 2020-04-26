@@ -4,12 +4,11 @@ import { push } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { routes } from "../Router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import LoginCard from "../../components/LoginCard"
-import { LoginWrapper } from "../../style/loginPage";
+import { LoginWrapper, Title } from "../../style/loginPage";
 import { autenticateLogin } from "../../actions/user"
 
 
@@ -37,10 +36,10 @@ class LoginPage extends Component {
     const { email, password } = this.state;
     return (
       <MainContainer>
-        <Header>
-          <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-          <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
-        </Header>
+         <Header>
+            <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
+            <h1>FutureX</h1>
+          </Header>
         <Banner src={BannerImg}/>
         <LoginCard>
           <LoginWrapper>
@@ -55,12 +54,13 @@ class LoginPage extends Component {
               onChange={this.handleFieldChange}
               name="password"
               type="password"
-              label="Password"
+              label="Senha"
               value={password}
             />
-            <Button color="primary" size="large" onClick={this.sendLoginData}>LOGIN</Button>
+            <Button color="secondary" size="large" onClick={this.sendLoginData}>LOGIN</Button>
           </LoginWrapper>
         </LoginCard>
+        <Footer/>
       </MainContainer>
     );
   }

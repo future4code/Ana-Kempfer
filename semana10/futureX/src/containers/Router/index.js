@@ -7,7 +7,7 @@ import TripDetailsPage from "../TripDetailsPage";
 import HomePage from "../HomePage";
 import ApplicationPage from "../ApplicationPage";
 import CreateTravelPage from "../CreateTripPage";
-import AdminPanel from "../AdmPanel/index";
+import AdmPanel from "../AdmPanel";
 
 
 export const routes = {
@@ -17,7 +17,7 @@ export const routes = {
   createTrip: "/trips/create",
   allTrips: "/trips/list",
   tripDetails: "/trips/details",
-  adminPanel: "/admin/panel"
+  admPanel: "/adm/panel"
 };
 
 
@@ -32,7 +32,7 @@ function Router(props) {
         <Route path={routes.createTrip} component={CreateTravelPage} exact/>
         <Route path={routes.allTrips} component={ListTripPage} exact/>
         <Route path={routes.tripDetails} component={TripDetailsPage} exact/>
-        <Route path={routes.adminPanel} component={AdminPanel} exact/>
+        <Route path={routes.admPanel} component={AdmPanel} exact/>
       </Switch>
     </ConnectedRouter>
   );

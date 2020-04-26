@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import RedirectCard from "../../components/RedirectCard";
 import PlusIcon from "../../resources/plusicon.png";
 import PlanetIcon from "../../resources/planeticon.png";
@@ -27,13 +26,14 @@ class AdminPanel extends Component {
   render() {
     return (
       <MainContainer>
-        <Header>
-          <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-          <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
-        </Header>
+         <Header>
+            <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
+            <h1>FutureX</h1>
+          </Header>
         <Banner src={BannerImg}/>
         <RedirectCard onClick={this.props.goToCreateTripPage} title="Criar Viagem" img={PlusIcon}/>
         <RedirectCard onClick={this.props.goToListTripPage} title="Ver Viagens" img={PlanetIcon}/>
+        <Footer/>
       </MainContainer>
     );
   }

@@ -3,44 +3,42 @@ import styled from "styled-components";
 
 
 const ContainerCard = styled.div`
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: absolute;
-    background-color: #CE102C ;
     width: 300px;
-    height: 250px;
+    height: 280px;
     top: 35vh;
     right: 50vw;
     :nth-of-type(2) {
         top: 35vh;
-        left: 10vw;
+        left: 50vw;
     }
-    box-shadow: 0 0px 50px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: bottom;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border-radius: 500px;
-    color: #030303;
+    border: 2px solid #1de8b5;
+    border-radius: 100px;
+    cursor: pointer;
     :hover {
-        box-shadow: 0 0 50px #FEE123;
-        color: #FEE123;
+        box-shadow: 0 0 70px #1de8b5;
     }
     :active {
-        box-shadow: 0 0px 50px rgba(0, 0, 0, 0.5);
-        color: #FEE123;
+        box-shadow: 0 0px 70px #1de8b5;
     }
 `  
 
 const BackgroundImg = styled.img`
-    opacity: 0.5;
-    width: 100%;
-    height: 100%;
-    border-radius: 500px;
+    opacity: 0.6;
+    width: 70%;
+    height: 70%;
+    border-radius: 0px;
 `
 
 const Title = styled.h3`
+    color: white;
     position: absolute;
-    bottom: 22%;
+    bottom: 0;
     font-size: 40pt;
     z-index: 9;
 `

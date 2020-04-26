@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
 import LogoMarca from "../../resources/Iconefuturex.png";
 import LogoTipo from "../../resources/logotipofuturex.png";
 import BannerImg from "../../resources/banner.webp";
@@ -115,6 +115,7 @@ class TripDetailsPage extends Component {
         ))}
         </TripDetailCard>
       </GridTrip>
+      <Footer/>
     </MainContainer>
     );
   }

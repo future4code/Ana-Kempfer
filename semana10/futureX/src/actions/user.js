@@ -17,8 +17,7 @@ export const autenticateLogin = (email, password) => async (dispatch) => {
         
         const userToken = response.data.token;
         window.localStorage.setItem("token", userToken);
-        
-        dispatch(push(routes.adminPanel));
+        dispatch(push(routes.admPanel));
 
     } catch(error) {
         window.alert("Erro ao fazer login.")

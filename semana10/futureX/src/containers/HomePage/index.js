@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import RedirectCard from "../../components/RedirectCard";
-import RocketIcon from "../../resources/rocketicon.png";
-import UserIcon from "../../resources/usericon.png";
+import Astronauta from "../../resources/astronauta.png";
+import Nave from "../../resources/lancamento.png";
+
 
 
 class HomePage extends Component {
@@ -22,12 +22,13 @@ class HomePage extends Component {
     return (
       <MainContainer>
           <Header>
-            <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
-            <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
+            <Logo onClick={this.props.goToHomePage} src={LogoTipo}/>
+            <h1><strong>FutureX</strong></h1>
           </Header>
           <Banner src={BannerImg}/>
-          <RedirectCard onClick={this.props.goToLoginPage} title="Entrar" img={UserIcon}/>
-          <RedirectCard onClick={this.props.goToApplicationPage} title="Candidato" img={RocketIcon}/>
+          <RedirectCard onClick={this.props.goToLoginPage} title="Login" img={Nave}/>
+          <RedirectCard onClick={this.props.goToApplicationPage} title="Candidato" img={Astronauta}/>
+          <Footer/>
       </MainContainer>
     );
   }

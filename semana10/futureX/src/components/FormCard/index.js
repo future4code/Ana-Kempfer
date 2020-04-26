@@ -4,19 +4,19 @@ import styled from "styled-components";
 
 const ContainerFormCard = styled.div`
     position: absolute;
-    background-color: #CE102C;
-    width: 25vw;
-    height: 60vh;
-    box-shadow: 0 0px 50px rgba(0, 0, 0, 0.5);
-    padding: 44px;
+    background-color: #5F4B8B;
+    width: 30vw;
+    height: 80vh;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: initial;
-    border-radius: 15px;
+    border-radius: 20px;
     color: #FEE123;
-    top: 25%;
-    left: 38%;   
+    top: 20%;
+    left: 38%;
+     
 `  
 
 
