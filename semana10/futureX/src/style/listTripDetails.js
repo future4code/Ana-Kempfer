@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 
-
-
 export const GridTrip = styled.div`
     display: grid;
     grid-template-columns: 100vw;
@@ -20,9 +18,11 @@ export const ContainerTip = styled.div`
 export const ContainerCandidate = styled.div`
     display: flex;
     flex-direction: row;
+    border: 2px solid black;
 `
 
 export const CandidateItem = styled.div`
     margin: 0.5em 0.5em;
     flex-direction: column;
+    
 `

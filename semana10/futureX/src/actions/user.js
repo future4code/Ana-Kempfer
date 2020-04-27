@@ -7,20 +7,20 @@ import { getTripDetail } from "./trips";
 //FUNÇÕES ASSINCRONAS
 
 export const autenticateLogin = (email, password) => async (dispatch) => {
-    const loginInformation = {
+    const body = {
         email: email,
         password: password,
     }
-
     try {
-        const response = await axios.post(`https://us-central1-missao-newton.cloudfunctions.net/futureX/anaKempfer/login`, loginInformation);
+        const response = await axios.post(`https://us-central1-missao-newton.cloudfunctions.net/futureX/anakempfer/login`, body);
         
-        const userToken = response.data.token;
-        window.localStorage.setItem("token", userToken);
+        const token = response.data.token;
+        window.localStorage.setItem("token", token);
+        
         dispatch(push(routes.admPanel));
 
     } catch(error) {
-        window.alert("Erro ao fazer login.")
+        alert("Erro ao fazer login.")
     }
 }
 
@@ -60,6 +60,6 @@ export const approveCandidate = (tripId, candidateId, response) => async (dispat
 
         dispatch(getTripDetail(tripId))
     } catch(error) {
-        window.alert("Erro ao tentar aprovar candidato.")
+        alert("Erro ao tentar aprovar candidato.")
     }
 }

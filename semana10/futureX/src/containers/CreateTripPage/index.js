@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import { Header, Logo, Banner, MainContainer } from "../../style/global";
+import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
 import LogoTipo from "../../resources/planeta.png";
 import BannerImg from "../../resources/banner2.webp";
 import { routes } from "../Router";
@@ -71,7 +71,8 @@ class CreateTripPage extends Component {
 
   sendFormData = () => {
     const { form } = this.state;
-    this.props.createTrip(form)
+    this.props.createTrip(form);
+    this.setState({form: {}})
   }
 
 
@@ -117,6 +118,7 @@ class CreateTripPage extends Component {
           <Button fullWidth color="primary" size="large" onClick={this.sendFormData}>Enviar</Button>
         </form>
       </FormCard>
+      <Footer/>
     </MainContainer>
     );
   }

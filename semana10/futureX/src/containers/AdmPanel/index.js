@@ -6,8 +6,8 @@ import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global"
 import LogoTipo from "../../resources/planeta.png";
 import BannerImg from "../../resources/banner2.webp";
 import RedirectCard from "../../components/RedirectCard";
-import PlusIcon from "../../resources/plusicon.png";
-import PlanetIcon from "../../resources/planeticon.png";
+import Criar from "../../resources/consertar.png";
+import Viagem from "../../resources/viagem-ao-espaco.png";
 
 class AdminPanel extends Component {
   constructor(props) {
@@ -31,8 +31,8 @@ class AdminPanel extends Component {
             <h1>FutureX</h1>
           </Header>
         <Banner src={BannerImg}/>
-        <RedirectCard onClick={this.props.goToCreateTripPage} title="Criar Viagem" img={PlusIcon}/>
-        <RedirectCard onClick={this.props.goToListTripPage} title="Ver Viagens" img={PlanetIcon}/>
+        <RedirectCard onClick={this.props.goToCreateTripPage} title="Criar Viagem" img={Criar}/>
+        <RedirectCard onClick={this.props.goToListTripPage} title="Ver Viagens" img={Viagem}/>
         <Footer/>
       </MainContainer>
     );

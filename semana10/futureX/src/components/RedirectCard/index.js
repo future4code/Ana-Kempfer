@@ -39,7 +39,7 @@ const Title = styled.h3`
     color: white;
     position: absolute;
     bottom: 0;
-    font-size: 40pt;
+    font-size: 30pt;
     z-index: 9;
 `
 

@@ -50,7 +50,7 @@ class ApplicationPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {},
+      form: {}
     };
   }
 
@@ -70,7 +70,8 @@ class ApplicationPage extends Component {
 
   sendFormData = () => {
     const { form } = this.state;
-    this.props.applicateUser(form)
+    this.props.applicateUser(form);
+    this.setState({form: {}})
   }
 
   render() {

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const ContainerFormCard = styled.div`
     position: absolute;
-    background-color: #5F4B8B;
+    background-color: rgba(29,232,181);
     width: 30vw;
     height: 80vh;
     padding: 30px;

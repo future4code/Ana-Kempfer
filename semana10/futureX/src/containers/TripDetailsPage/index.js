@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global";
-import LogoMarca from "../../resources/Iconefuturex.png";
-import LogoTipo from "../../resources/logotipofuturex.png";
-import BannerImg from "../../resources/banner.webp";
+import LogoTipo from "../../resources/planeta.png";
+import BannerImg from "../../resources/banner2.webp";
 import { routes } from "../Router";
 import { getTripDetail } from "../../actions/trips"
 import { approveCandidate } from "../../actions/user"
@@ -50,8 +49,8 @@ class TripDetailsPage extends Component {
     return (
       <MainContainer>
       <Header>
-        <Logo src={LogoMarca} onClick={this.props.goToHomePage}/>
         <Logo src={LogoTipo} onClick={this.props.goToHomePage}/>
+        <h1>FutureX</h1>
       </Header>
       <Banner src={BannerImg}/>
       <GridTrip>
@@ -71,7 +70,7 @@ class TripDetailsPage extends Component {
           <ContainerTip>
             <span>Descrição: </span><span>{tripDetails.description}</span>
           </ContainerTip>
-        <Button row="3em" color="primary" onClick={this.handleShowCandidates}>{ this.state.showCandidates ? "Ocultar Candidatos" : "Mostrar Candidatos"}</Button>
+        <Button row="2em" color="primary" onClick={this.handleShowCandidates}>{ this.state.showCandidates ? "Ocultar Candidatos" : "Mostrar Candidatos"}</Button>
         { this.state.showCandidates && tripDetails.candidates.map( candidate => (
           <ContainerCandidate>
             <CandidateItem>

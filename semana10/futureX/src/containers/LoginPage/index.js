@@ -8,7 +8,7 @@ import { Header, Logo, Banner, MainContainer, Footer } from "../../style/global"
 import LogoTipo from "../../resources/planeta.png";
 import BannerImg from "../../resources/banner2.webp";
 import LoginCard from "../../components/LoginCard"
-import { LoginWrapper, Title } from "../../style/loginPage";
+import { LoginWrapper } from "../../style/loginPage";
 import { autenticateLogin } from "../../actions/user"
 
 
@@ -29,14 +29,18 @@ class LoginPage extends Component {
 
   sendLoginData = () => {
     const { email, password } = this.state;
-    this.props.autenticateLogin(email, password)
+    this.props.autenticateLogin(email, password);
+    this.setState({
+      email: "",
+      password: "",
+    })
   }
 
   render() {
     const { email, password } = this.state;
     return (
       <MainContainer>
-         <Header>
+          <Header>
             <Logo src={LogoTipo}  onClick={this.props.goToHomePage}/>
             <h1>FutureX</h1>
           </Header>

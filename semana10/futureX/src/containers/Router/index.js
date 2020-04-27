@@ -6,7 +6,7 @@ import ListTripPage from "../ListTripPage";
 import TripDetailsPage from "../TripDetailsPage";
 import HomePage from "../HomePage";
 import ApplicationPage from "../ApplicationPage";
-import CreateTravelPage from "../CreateTripPage";
+import CreateTripPage from "../CreateTripPage";
 import AdmPanel from "../AdmPanel";
 
 
@@ -26,13 +26,13 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
-        <Route path={routes.root} component={HomePage} exact/>
-        <Route path={routes.application} component={ApplicationPage} exact/>
-        <Route path={routes.login} component={LoginPage} exact/>
-        <Route path={routes.createTrip} component={CreateTravelPage} exact/>
-        <Route path={routes.allTrips} component={ListTripPage} exact/>
-        <Route path={routes.tripDetails} component={TripDetailsPage} exact/>
-        <Route path={routes.admPanel} component={AdmPanel} exact/>
+        <Route exact path={routes.root} component={HomePage}/>
+        <Route exact path={routes.application} component={ApplicationPage}/>
+        <Route exact path={routes.login} component={LoginPage}/>
+        <Route exact path={routes.createTrip} component={CreateTripPage}/>
+        <Route exact path={routes.allTrips} component={ListTripPage}/>
+        <Route exact path={routes.tripDetails} component={TripDetailsPage}/>
+        <Route exact path={routes.admPanel} component={AdmPanel}/>
       </Switch>
     </ConnectedRouter>
   );

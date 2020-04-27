@@ -3,12 +3,11 @@ import styled from "styled-components";
 
 
 const ContainerTripDetailCard = styled.div`
-    background-color: white;
+    background-color: rgba(29,232,181);
     width: 60%;
     height: auto;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    color: #993900;
+    border-radius: 20px;
+    color: black;
     padding: 20px;
     display: flex;
     flex-direction: column;

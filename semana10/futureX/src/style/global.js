@@ -34,7 +34,7 @@ export const Banner = styled.img`
     margin: none;
 `
 export const Footer = styled.footer`
-    background-color: #6dffe7;
+    background-color: #00b585;
     height: 7vh;
     display: flex;
     justify-content: flex-start;

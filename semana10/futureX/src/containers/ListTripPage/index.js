@@ -9,6 +9,7 @@ import BannerImg from "../../resources/banner2.webp";
 import { setSelectedTripId } from "../../actions/trips"
 import { GridAllTrips } from "../../style/listTripPage"
 import ContainerTripCard from "../../components/TripCard/index"
+import Button from "@material-ui/core/Button";
 
 class ListTripPage extends Component {
   constructor(props) {
@@ -27,8 +28,9 @@ class ListTripPage extends Component {
   }
 
   handleOnClickTrip = (tripId) => {
-    this.props.setSelectedTripId(tripId)
-    this.props.goToTripDetailsPage()
+    console.log("Foi clicado");
+    this.props.setSelectedTripId(tripId);
+    this.props.goToTripDetailsPage();
   }
 
   render() {
@@ -41,7 +43,7 @@ class ListTripPage extends Component {
         <Banner src={BannerImg}/>
         <GridAllTrips>
           {this.props.allTrips.map((trip) => (
-            <ContainerTripCard onClick={() => this.handleOnClickTrip(trip.id)}>
+            <ContainerTripCard>
               <div>
                 <span>Nome: </span><span>{trip.name}</span>
               </div>
@@ -57,6 +59,7 @@ class ListTripPage extends Component {
               <div>
                 <span>Descrição: </span><span>{trip.description}</span>
               </div>
+              <Button color="primary" size="large" onClick={() => this.handleOnClickTrip(trip.id)}>DETALHES</Button>
             </ContainerTripCard>
           ))}
       	</GridAllTrips>
