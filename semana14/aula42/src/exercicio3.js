@@ -1,10 +1,4 @@
-
-type post = {
-    author: string,
-    text: string
-}
-
-const arrayOfPosts : post[] = [
+var arrayOfPosts = [
     {
         author: "Astrodev",
         text: "Eu sou um texto qualquer."
@@ -26,11 +20,7 @@ const arrayOfPosts : post[] = [
         text: "Lembrei de molhar as violetas e salvei uma planta hoje!"
     }
 ];
-
 console.log("Array de posts: ", arrayOfPosts);
-
-const findThisAuthor: string = "Astrodev";
-
-const listByAuthor = arrayOfPosts.filter((post:any, index:number,array:any) => post.author === findThisAuthor);
+var findThisAuthor = "Astrodev";
+var listByAuthor = arrayOfPosts.filter(function (post, index, array) { return post.author === findThisAuthor; });
 console.log("Lista por autor: ", listByAuthor);
-
