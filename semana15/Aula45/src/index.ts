@@ -1,4 +1,5 @@
-import * as moment from "moment"
+import * as moment from "moment";
+import * as fs from "fs";
 
 moment.locale("pt-br")
 

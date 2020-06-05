@@ -8,6 +8,6 @@
       "target": "es6",
       "module": "commonjs"
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "build/index.js"],
     "exclude": ["node_modules"]
   }
