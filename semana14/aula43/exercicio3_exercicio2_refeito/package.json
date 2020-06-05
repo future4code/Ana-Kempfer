@@ -1,0 +1,18 @@
+{
+  "name": "exercicio3-exercicio1-refeito",
+  "version": "1.0.0",
+  "description": "exercicio1 refeito conforme orientação do exercicio3",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "ts-node ./src/index.ts",
+    "createFile": "mkdir pastaNova"
+  },
+  "author": "Ana Kempfer",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.0.11",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
