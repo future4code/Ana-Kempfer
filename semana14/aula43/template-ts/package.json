@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "ts-node ./src/index.ts",
-    "build": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",    
+    "createFile": "mkdir pastaNova"
   },
   "author": "Ana Kempfer",
   "license": "ISC",
