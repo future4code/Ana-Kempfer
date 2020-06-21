@@ -36,4 +36,8 @@ export class UserDB extends BaseDataBase {
       .where({ id });
     return result[0];
   }
+
+  public async deleteUser(id: string): Promise<any> {
+    await this.getConnection().del().from(UserDB.TABLE_NAME).where({ id });
+  }
 }

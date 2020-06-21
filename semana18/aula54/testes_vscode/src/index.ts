@@ -23,56 +23,136 @@ const idManager = new IdGenerator;
 const hashManager = new HashManager();
 const auth = new Authenticator();
 
+
 app.post("/signup", async (req: Request, res: Response) => {
-  try{
+  try {
     const userData = {
       email: req.body.email,
       password: req.body.password,
+      role: req.body.role,
     };
 
-    if (!userData.email && userData.email.indexOf("@") === -1) {
-      throw new Error("Invalid Email");
-    }
+    const idGenerator = new IdGenerator();
+    const id = idGenerator.generate();
 
-    if (!userData.password && userData.password.length < 6) {
-      throw new Error("Invalid Password");
-    }
+    const hashManager = new HashManager();
+    const hashPassword = await hashManager.hash(userData.password);
 
-    const id = idManager.generate();
+    const userDB = new UserDB();
+    await userDb.createUser(id, userData.email, hashPassword, userData.role);
 
-    userDB.createUser(id, userData.email, userData.password);
-
-    const token = auth.generateToken({id});
-
-    res.status(200).send({
-      token : token
-    })
-  }catch (err){
-    res.status(400).send({
-      message: err.message
+    const authenticator = new Authenticator();
+    const token = authenticator.generateToken({
+      id,
+      role: userData.role,
     });
-  }
-});
-
-app.get("/user/profile", async (req: Request, res: Response) => {
-  try {
-    const token = req.headers.authorization as string;
-
-    const authData = auth.getData(token);
-    const userInfo = await userDB.getUserById(authData.id);
 
     res.status(200).send({
-      id: userInfo.id,
-      name: userInfo.name,
-      email: userInfo.email,
+      token,
     });
   } catch (err) {
     res.status(400).send({
       message: err.message,
     });
   }
+
+  await BaseDatabase.destroyConnection();
 });
 
+app.post("/login", async (req: Request, res: Response) => {
+  try {
+    if (!req.body.email || req.body.email.indexOf("@") === -1) {
+      throw new Error("Invalid email");
+    }
+
+    const userData = {
+      email: req.body.email,
+      password: req.body.password,
+    };
+
+    const userDatabase = new UserDatabase();
+    const user = await userDatabase.getUserByEmail(userData.email);
+
+    const hashManager = new HashManager();
+    const comapreResult = await hashManager.compare(
+      userData.password,
+      user.password
+    );
+
+    if (!comapreResult) {
+      throw new Error("Invalid password");
+    }
+
+    const authenticator = new Authenticator();
+    const token = authenticator.generateToken({
+      id: user.id,
+      role: user.role,
+    });
+
+    res.status(200).send({
+      token,
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+  await BaseDatabase.destroyConnection();
+});
+
+app.get("/user/profile", async (req: Request, res: Response) => {
+  try {
+    const token = req.headers.authorization as string;
+
+    const authenticator = new Authenticator();
+    const authenticationData = authenticator.getData(token);
+
+    if (authenticationData.role !== "normal") {
+      throw new Error("Only a normal user can access this funcionality");
+    }
+
+    const userDb = new UserDatabase();
+    const user = await userDb.getUserById(authenticationData.id);
+
+    res.status(200).send({
+      id: user.id,
+      email: user.email,
+      role: authenticationData.role,
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+  await BaseDatabase.destroyConnection();
+});
+
+
+app.get("/user/:id", async (req: Request, res: Response) => {
+  try {
+    const token = req.headers.authorization as string;
+
+    const authenticator = new Authenticator();
+    authenticator.getData(token);
+	
+
+    const id = req.params.id;
+
+    const userDatabase = new UserDatabase();
+    const user = await userDatabase.getUserById(id);
+
+    res.status(200).send({
+      id: user.id,
+      email: user.email,
+      role: user.role,
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+  await BaseDatabase.destroyConnection();
+});
 
 
 
