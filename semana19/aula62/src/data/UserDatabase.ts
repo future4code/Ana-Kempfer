@@ -5,12 +5,13 @@ export function performPurchase(user: User, value: number): User | undefined {
         return {
             ...user,
             balance: user.balance - value		
-        }
-    }
-    return undefined
-}
+        };
+    };
+    return undefined;
+};    
 
-interface User {
+
+export interface User {
     name: string
     balance: number    
 };
