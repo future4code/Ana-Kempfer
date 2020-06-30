@@ -1,5 +1,4 @@
-import { BaseDataBase } from "./BaseDataBase";
-
+//
 export const validateCharacter = (input: Character): boolean => {
     if(
         !input.name ||
