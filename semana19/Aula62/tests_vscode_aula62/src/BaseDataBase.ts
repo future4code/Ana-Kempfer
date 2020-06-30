@@ -1,4 +1,5 @@
 // import knex from "knex";
+// import Knex from "knex";
 
 // export abstract class BaseDataBase{
 //   private static connection: knex | null = null;
