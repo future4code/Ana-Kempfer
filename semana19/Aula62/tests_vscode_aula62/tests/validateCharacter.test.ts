@@ -63,7 +63,23 @@ describe("Testing validateCharacter", () => {
         expect(result).toBe(true);
     });
 
+    test("Creating Mocks", () => {
+        const validatorMock1 = jest.fn(() => {
+            return true
+        });
+
+        const validatorMock2 = jest.fn(() => {
+			return false
+		});
+
+    });
+       
+
 });
+
+
+
+
 
 
 
