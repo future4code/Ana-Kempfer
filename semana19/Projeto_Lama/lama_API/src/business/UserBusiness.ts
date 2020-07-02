@@ -5,10 +5,20 @@ export class UserBusiness{
     private userDatabase = new UserDatabase();
     private idGenerator = new IdGenerator();
 
-    public async signup(name: string, email: string, password: string, role: string ) : Promise<string>{
+    public async signup(
+      name: string, 
+      email: string, 
+      password: string, 
+      role: string,
+      device: string
+      ) : Promise<string>{
       const id = this.idGenerator.generate();
-      await this.userDatabase.signup(name, email, password, role);
+      await this.userDatabase.signup(name, email, password, role, device);
       return id;
+    }
+
+    public async login(email: string): Promise<any> {
+      await this.userDatabase.getUserByEmail(email);
     }
 
     // public async createFriendship(user_id: string, friend_id: string): Promise<any> {
@@ -23,10 +33,7 @@ export class UserBusiness{
     //    return await this.userDatabase.createFriendship( user_id, friend_id);
     // };
 
-    // public async login(email: string): Promise<any> {
-    //      await this.userDatabase.getUserByEmail(email);
-    // }
-
+   
     // public async deleteFriendship(user_id: string, friend_id: string): Promise<any>{
     //      await this.userDatabase.deleteFriendship(user_id, friend_id);
     // };      

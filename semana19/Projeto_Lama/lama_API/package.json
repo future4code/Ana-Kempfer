@@ -1,13 +1,13 @@
 {
   "name": "Lama_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto de API para administração de festival de música",
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js",
     "start": "ts-node-dev ./src/index.ts"
   },
-  "author": "Milene e Ana",
+  "author": "Ana Kempfer",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.3",

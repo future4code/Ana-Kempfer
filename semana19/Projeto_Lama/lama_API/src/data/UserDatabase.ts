@@ -3,22 +3,36 @@ import { IdGenerator } from "../services/IdGenerator";
 
 export class UserDatabase extends BaseDataBase {
 
-    static TABLE_NAME: string = "Lama_users";
+    static TABLE_NAME: string = "Lama_Users";
     private idGenerator = new IdGenerator();
 
-    public async signup(name: string, email: string, password: string, role: string) {
+    public async signup(
+        name: string, 
+        email: string, 
+        password: string, 
+        role: string, 
+        device: string
+        ){
         try {
-            const user_id = this.idGenerator.generate();
+            const id = this.idGenerator.generate();
 
             await super.getConnection().raw(`
-                INSERT INTO Lama_users(user_id, name, email, password, role)
+                INSERT INTO Lama_Users(
+                    id, 
+                    name, 
+                    email, 
+                    password, 
+                    role, 
+                    device
+                )
                 VALUES
                  (
-                "${user_id}",
+                "${id}",
                 "${name}",
                 "${email}",
                 "${password}",
-                "${role}"
+                "${role}", 
+                "${device}"
                 )
                 `);                
         }catch(err){

@@ -30,7 +30,8 @@ export class UserController {
         userData.name,
         userData.email,
         hashPassword,
-        userData.role
+        userData.role,
+        userData.device
       );
 
       const accessToken = authenticator.generateToken({ 
