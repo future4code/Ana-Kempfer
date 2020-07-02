@@ -41,17 +41,17 @@ export class UserDatabase extends BaseDataBase {
         
     };
 
-    // public async getUserByEmail(email: string): Promise<any> {
-    //     try{
-    //         const result = await this.getConnection()
-    //             .select("*")
-    //             .from("Labook_users")
-    //             .where({ email });
-    //         return result[0];
-    //     }catch (err){
-    //         throw new Error(err.message)
-    //     }
-    // }  
+    public async getUserByEmail(email: string): Promise<any> {
+        try{
+            const result = await this.getConnection()
+                .select("*")
+                .from("Lama_Users")
+                .where({ email });
+            return result[0];
+        }catch (err){
+            throw new Error(err.message)
+        }
+    }  
 
     // public async getUserById(user_id: string) {
     //     try {

@@ -44,61 +44,55 @@ export class UserController {
       }, process.env.REFRESH_TOKEN_EXPIRES_IN);
 
       res.status(200).send({ accessToken, refreshToken });
-
-      } catch (err) {
-        res.status(400).send({ error: err.message });
-      }
-      await BaseDataBase.destroyConnection();
+    }catch(err){
+      res.status(400).send({ error: err.message });
+    }
+    await BaseDataBase.destroyConnection();
   }
    
-  // async login (req: Request, res: Response): Promise<void> {
-  //     try {
-            
-  //       const userData: LoginInputDTO = {
-  //         email: req.body.email,
-  //         password: req.body.password,
-  //         device: req.body.device
-  //       };    
+  async login (req: Request, res: Response): Promise<void> {
+    try {           
+      const userData: LoginInputDTO = {
+        email: req.body.email,
+        password: req.body.password,
+        device: req.body.device
+      };    
 
-  //       if (!req.body.email || req.body.email.indexOf("@") === -1) {
-  //         throw new Error("Invalid email");
-  //       }
+      if (!req.body.email || req.body.email.indexOf("@") === -1) {
+        throw new Error("Invalid email");
+      }
 
-  //       const user = await userBusiness.login(userData.email);
+      const user = await userBusiness.login(userData.email);
     
-  //       const compareResult = await hashManager.compare(userData.password, user.password);
+      const compareResult = await hashManager.compare(userData.password, user.password);
     
-  //       if (!compareResult) {
-  //         throw new Error("Invalid password");
-  //       }
+      if (!compareResult) {
+        throw new Error("Invalid password");
+      }
     
-  //       const accessToken = authenticator.generateToken({ 
-  //         id : user.id
-  //       }, process.env.ACCESS_TOKEN_EXPIRES_IN);
+      const accessToken = authenticator.generateToken({ 
+        id : user.id
+      }, process.env.ACCESS_TOKEN_EXPIRES_IN);
   
-  //       const refreshToken = authenticator.generateToken({
-  //         id : user.id,
-  //         device: userData.device
-  //       }, process.env.REFRESH_TOKEN_EXPIRES_IN);
+      const refreshToken = authenticator.generateToken({
+        id : user.id,
+        device: userData.device
+      }, process.env.REFRESH_TOKEN_EXPIRES_IN);
 
-  //       const refreshTokenDataBase = new RefreshTokenDataBase();
-  //       const refreshTokenFromDataBase = await refreshTokenDataBase.getRefreshTokenByIdAndDevide(user.id, userData.device);
+      const refreshTokenDataBase = new RefreshTokenDataBase();
+      const refreshTokenFromDataBase = await refreshTokenDataBase.getRefreshTokenByIdAndDevide(user.id, userData.device);
     
-  //       if(refreshTokenDataBase){
-  //         await refreshTokenDataBase.deleteToken(refreshTokenFromDataBase.token);
-  //       };
+      if(refreshTokenDataBase){
+        await refreshTokenDataBase.deleteToken(refreshTokenFromDataBase.token);
+      };
 
-  //       await refreshTokenDataBase.createRefreshToken(refreshToken,user.user_id, userData.device, true ),
+      await refreshTokenDataBase.createRefreshToken(refreshToken,user.id, userData.device, true ),
 
-  //       res.status(200).send({
-  //         accessToken, refreshToken
-  //       });
-  //     } catch (err) {
-  //       res.status(400).send({
-  //         message: err.message,
-  //       });
-  //     }
-  // };
+      res.status(200).send({accessToken, refreshToken});
+    }catch(err){
+      res.status(400).send({message: err.message});
+    };
+  };
 
   // async createFriendship(req: Request, res: Response): Promise<void> {
   //   try {
